@@ -4,7 +4,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBNOafV02TMoC63dUQmxhL5r9iq_HLoMD7Wz6p1W_jr33xRh5gl-UaXKLd7HM6xfNoK3hZrUYVq5UjFG8TeUxVg-WZb5IGax182W4dUnQrAbapHIHcMZwqEwCNZPG2B7Rjf6bACQSTX7MzMFE_YNtxcBorFbxM"
+let userAccessToken = "BQD-Q_ss_qevTRv6W0qWezkBmWX1fUiArvrP_B8h4QhOFpzPOrSQHrW3gQIS2Dlr94sg6Czxs9pu17mrGNEWqnjj1GvhZanVl4_lS_aX2VmgqibPPQknbsPpAvptI9WPhWZKNVGc0kg6B_GdO7x3EsKf8jeMj64"
 
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
@@ -34,14 +34,10 @@ searchButton.addEventListener('click', function () {
         .then(response => response.json())
         .then(({ tracks }) => {
             let resultsLItem = tracks.items.map((item) => {
-                // console.log(`${item.album.name}`)
-                // console.log(`${item.album.images[1].url}`)
-                // console.log(`${item.album.artists[0].name}`)
-                // console.log(`${item.album.release_date}`)
                 return `<li>
                     <h3>${item.album.artists[0].name}</h3>
                         <div class="elementBox">
-                        <img src="${item.album.images[1].url}"></img>
+                        <img onclick="getTracks('${item.album.id}')" src="${item.album.images[1].url}"></img>
                         <p>${item.album.name}</p>
                         <p>${item.album.release_date}</p>
                         </div>
@@ -50,11 +46,30 @@ searchButton.addEventListener('click', function () {
             resultsUL.innerHTML = resultsLItem.join('')
         })
 })
-    // .then(({ items, index }) => {
-    //     // console.log(`${tracks.items[2].album.name}`);
+// .then(({ items, index }) => {
+//     // console.log(`${tracks.items[2].album.name}`);
 
-    //     for (let i = 0; i < items.length; i++) {
-    //         console.log(`${items[index].album.name}`)
-    //     }
-    // })
+//     for (let i = 0; i < items.length; i++) {
+//         console.log(`${items[index].album.name}`)
+//     }
+// })
+
+function getTracks(id) {
+    fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
+        {
+            method: "GET",
+            headers:
+            {
+                Authorization: `Bearer ${userAccessToken}`
+            }
+        })
+        .then(response => response.json())
+        .then(({ items }) => {
+            items.map((item) => {
+                console.log(`${item.track_number}`)
+                console.log(`${item.name}`)
+            })
+        })
+}
+
 
