@@ -49,3 +49,16 @@
       width:150px;
       height:150px;
   }
+
+#resultsUL {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.elementBox {
+    background-color: #f1bc7f;
+    width: 
+}
