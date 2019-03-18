@@ -2,7 +2,9 @@
 // curl -X "GET" "https://api.spotify.com/v1/search?q=Muse&type=track%2Cartist&market=US&limit=10&offset=5" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer BQBe7On70vnzC4ri37k4xn6pvfV72C4ALxoE98cumKlYoVBD5ncZEiIsgcRk84126cF9wVSItHx7nMuiUJglUrkUKs2ARHSP1j3cwb9KrWB1fV5upvryK6N7MPbiTGj9GsdZZkcFCDzYcf21Ry8fnINUDIw9YBk"
 let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
-let userAccessToken = "BQDafDLYSxwNV2QiDTDcKtSxtSOrclK6d9fahA5tsAOKmEZefEbMP1ZZ_r9_Biu55H_5iNuEHToolpClA_98253IHLUhVK5wA7mgrLrH8GVAQheFr5sSfgJvqlhxcsGZyFOjhsT7MiiH5CAoEJXB9GaH7JTQwPo"
+let resultsBox = document.getElementById('resultsBox')
+let resultsUL = document.getElementById('resultsUL')
+let userAccessToken = "BQBNOafV02TMoC63dUQmxhL5r9iq_HLoMD7Wz6p1W_jr33xRh5gl-UaXKLd7HM6xfNoK3hZrUYVq5UjFG8TeUxVg-WZb5IGax182W4dUnQrAbapHIHcMZwqEwCNZPG2B7Rjf6bACQSTX7MzMFE_YNtxcBorFbxM"
 
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
@@ -21,21 +23,31 @@ let userAccessToken = "BQDafDLYSxwNV2QiDTDcKtSxtSOrclK6d9fahA5tsAOKmEZefEbMP1ZZ_
 //     })
 
 searchButton.addEventListener('click', function () {
-
-    fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=5&offset=5", {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer ${userAccessToken}`
-        }
-    })
+    fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
+        {
+            method: "GET",
+            headers:
+            {
+                Authorization: `Bearer ${userAccessToken}`
+            }
+        })
         .then(response => response.json())
         .then(({ tracks }) => {
-            tracks.items.forEach((item) => {
-                console.log(`${item.album.artists[0].name}`)
-                console.log(`${item.album.name}`)
-                console.log(`${item.album.images[1].url}`)
-                console.log(`${item.album.release_date}`)
+            let resultsLItem = tracks.items.map((item) => {
+                // console.log(`${item.album.name}`)
+                // console.log(`${item.album.images[1].url}`)
+                // console.log(`${item.album.artists[0].name}`)
+                // console.log(`${item.album.release_date}`)
+                return `<li>
+                    <h3>${item.album.artists[0].name}</h3>
+                        <div class="elementBox">
+                        <img src="${item.album.images[1].url}"></img>
+                        <p>${item.album.name}</p>
+                        <p>${item.album.release_date}</p>
+                        </div>
+                </li>`
             })
+            resultsUL.innerHTML = resultsLItem.join('')
         })
 })
     // .then(({ items, index }) => {
