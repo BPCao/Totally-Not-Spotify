@@ -6,6 +6,8 @@ let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
 let userAccessToken = "BQApxp8vjvj0D63bNzDn4YcqkWwnvEGziStHlxG15X3xxaWcKU73q4JJgfv_-9NQ6tzGeHqdVF5EHZVG7EmYdl-C9Max4PO2hHnciMCr3thpaHU5rPnxhB8EVYDj5fsTYSd9LwpKP-feUCir4gLxgYGVpD_D_SU"
 
+
+
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
 
@@ -22,7 +24,8 @@ let userAccessToken = "BQApxp8vjvj0D63bNzDn4YcqkWwnvEGziStHlxG15X3xxaWcKU73q4JJg
 //         })
 //     })
 
-searchButton.addEventListener('click', function () {
+searchButton.addEventListener('click', function () 
+{
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
         {
             method: "GET",
@@ -32,8 +35,10 @@ searchButton.addEventListener('click', function () {
             }
         })
         .then(response => response.json())
-        .then(({ tracks }) => {
-            let resultsLItem = tracks.items.map((item) => {
+        .then(({ tracks }) => 
+        {
+            let resultsLItem = tracks.items.map((item) => 
+            {
                 return `<li>
                     <h3>${item.album.artists[0].name}</h3>
                         <div class="elementBox">
@@ -54,15 +59,16 @@ searchButton.addEventListener('click', function () {
 //     }
 // })
 
-function getTracks(id) {
+function getTracks(id) 
+{
     fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
+    {
+        method: "GET",
+        headers:
         {
-            method: "GET",
-            headers:
-            {
-                Authorization: `Bearer ${userAccessToken}`
-            }
-        })
+            Authorization: `Bearer ${userAccessToken}`
+        }
+    })
         .then(response => response.json())
         .then(({ items }) => {
             let trackInfoList = items.map((item) => {

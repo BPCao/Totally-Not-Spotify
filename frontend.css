@@ -1,34 +1,48 @@
+* {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+}
+
+#userbar {
+    display: flex;
+    margin: 0px 20px 20px 20px;
+}
+
 .searchBarContainer {
     display: flex;
     flex-direction: column;
     background-color:lightblue;
   }
-  
+
   .searchBarContainer > div {
     background-color: bisque;
     margin: 10px;
     text-align: center;
     line-height: 75px;
-    
+
   }
+
+.random {
+
+}
+
 
   .title {
       display:flex;
       flex-direction: column;
-     text-align:center; 
+     text-align:center;
      font-size: 35px;
-     font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
-     font-size: 55px; 
-     font-style: normal; 
-     font-variant: normal; 
-     font-weight: 700; 
+     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+     font-size: 55px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 700;
      line-height: 26.4px;
      padding:20px;
      margin:20px;
   }
 
   .searchBar {
-      
+
       text-align: center;
       font-size: 40px;
       size: 45px;
@@ -60,5 +74,5 @@
 
 .elementBox {
     background-color: #f1bc7f;
-    width: 
+    width:
 }
