@@ -65,11 +65,15 @@ function getTracks(id) {
         })
         .then(response => response.json())
         .then(({ items }) => {
-            items.map((item) => {
+            let trackInfoList = items.map((item) => {
                 console.log(`${item.track_number}`)
                 console.log(`${item.name}`)
                 console.log(`${item.id}`)
+                return `${item.id}`
             })
+            console.log(trackInfoList)
+            idString = trackInfoList.join()
+            console.log(idString)
         })
     // .then(getTrackFeatures({ items }))
 }
@@ -80,3 +84,5 @@ function getTracks(id) {
 //     })
 //     console.loglog(trackIDList)
 // }
+
+// "https://api.spotify.com/v1/audio-features/?ids=4JpKVNYnVcJ8tuMKjAj50A,2NRANZE9UCmPAS5XVbXL40,24JygzOLM0EmRQeGtFcIcG" - H "Authorization: Bearer {your access token}"
