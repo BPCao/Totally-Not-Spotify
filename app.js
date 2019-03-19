@@ -4,7 +4,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBdAw_fyxuerEQSP8HubzFCDprqhE5OhMCij-erFNf89-_SONj6nJ-JO3tNh543Kw8DQ3e6QJ6xnkuHPGd_NmIRV6RMs-Xe9VGIIqdKnei-K6v6vb6lFTfBN8gT4VUsI4B9oqv__5bSOs4cGx6Ywu_qRLD6xLvwXxrh5wZr93Ew79bzEO84"
+let userAccessToken = "BQAbGXHZRI00-HI-rxyZs2UxRg4gi634CjJoMsvyDZZXlKWhyQjx1pBmKMS5k4_APbFwkqvKKdYDKXjXsW2ZohrrM78qn4Dp5CirEfHf7NsdxmDn99dfhJSAErDOwjsR71CvSF1tw2eTIVh8Sbt5iGkuEmYbAZcgVKuxteaQtBuJBNoSpZu5"
 
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
@@ -22,7 +22,8 @@ let userAccessToken = "BQBdAw_fyxuerEQSP8HubzFCDprqhE5OhMCij-erFNf89-_SONj6nJ-JO
 //         })
 //     })
 
-searchButton.addEventListener('click', function () {
+searchButton.addEventListener('click', function () 
+{
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
         {
             method: "GET",
@@ -32,8 +33,10 @@ searchButton.addEventListener('click', function () {
             }
         })
         .then(response => response.json())
-        .then(({ tracks }) => {
-            let resultsLItem = tracks.items.map((item) => {
+        .then(({ tracks }) => 
+        {
+            let resultsLItem = tracks.items.map((item) => 
+            {
                 return `<li>
                     <h3>${item.album.artists[0].name}</h3>
                         <div class="elementBox">
@@ -54,20 +57,23 @@ searchButton.addEventListener('click', function () {
 //     }
 // })
 
-function getTracks(id) {
+function getTracks(id) 
+{
     fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
+    {
+        method: "GET",
+        headers:
         {
-            method: "GET",
-            headers:
-            {
-                Authorization: `Bearer ${userAccessToken}`
-            }
-        })
+            Authorization: `Bearer ${userAccessToken}`
+        }
+    })
         .then(response => response.json())
-        .then(({ items }) => {
-            items.map((item) => {
-                console.log(`${item.track_number}`)
-                console.log(`${item.name}`)
+        .then(({ items }) => 
+        {
+            items.map((item) => 
+            {
+                console.log(item.track_number)
+                console.log(item.name)
             })
         })
 }
