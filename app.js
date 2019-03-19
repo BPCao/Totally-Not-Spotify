@@ -4,7 +4,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQD-Q_ss_qevTRv6W0qWezkBmWX1fUiArvrP_B8h4QhOFpzPOrSQHrW3gQIS2Dlr94sg6Czxs9pu17mrGNEWqnjj1GvhZanVl4_lS_aX2VmgqibPPQknbsPpAvptI9WPhWZKNVGc0kg6B_GdO7x3EsKf8jeMj64"
+let userAccessToken = "BQApxp8vjvj0D63bNzDn4YcqkWwnvEGziStHlxG15X3xxaWcKU73q4JJgfv_-9NQ6tzGeHqdVF5EHZVG7EmYdl-C9Max4PO2hHnciMCr3thpaHU5rPnxhB8EVYDj5fsTYSd9LwpKP-feUCir4gLxgYGVpD_D_SU"
 
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
@@ -68,8 +68,15 @@ function getTracks(id) {
             items.map((item) => {
                 console.log(`${item.track_number}`)
                 console.log(`${item.name}`)
+                console.log(`${item.id}`)
             })
         })
+    // .then(getTrackFeatures({ items }))
 }
 
-
+// function getTrackFeatures({ items }) {
+//     let trackIDList = items.map((item) => {
+//         return item.id
+//     })
+//     console.loglog(trackIDList)
+// }
