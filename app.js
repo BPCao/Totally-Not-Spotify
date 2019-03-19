@@ -4,7 +4,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQD-Q_ss_qevTRv6W0qWezkBmWX1fUiArvrP_B8h4QhOFpzPOrSQHrW3gQIS2Dlr94sg6Czxs9pu17mrGNEWqnjj1GvhZanVl4_lS_aX2VmgqibPPQknbsPpAvptI9WPhWZKNVGc0kg6B_GdO7x3EsKf8jeMj64"
+let userAccessToken = "BQBdAw_fyxuerEQSP8HubzFCDprqhE5OhMCij-erFNf89-_SONj6nJ-JO3tNh543Kw8DQ3e6QJ6xnkuHPGd_NmIRV6RMs-Xe9VGIIqdKnei-K6v6vb6lFTfBN8gT4VUsI4B9oqv__5bSOs4cGx6Ywu_qRLD6xLvwXxrh5wZr93Ew79bzEO84"
 
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
