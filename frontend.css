@@ -1,70 +1,74 @@
-* {
+* 
+{
     font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
 }
 
-#userbar {
-    display: flex;
-    margin: 0px 20px 20px 20px;
+img 
+{
+    padding:10px;
+    margin:10px;
+    width:150px;
+    height:150px;
 }
 
-.searchBarContainer {
+.elementBox 
+{
+    background-color: #f1bc7f;
+}
+
+.searchBarContainer 
+{
     display: flex;
     flex-direction: column;
     background-color:lightblue;
-  }
+}
 
-  .searchBarContainer > div {
+.searchBarContainer > div 
+{
     background-color: bisque;
     margin: 10px;
     text-align: center;
     line-height: 75px;
 
-  }
-
-.random {
-
 }
 
+.title 
+{
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    font-size: 35px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    padding:20px;
+    margin:20px;
+}
+  
+.searchBar 
+{
+    text-align: center;
+    font-size: 40px;
+    size: 45px;
+    padding:10px;
+    margin:10px;
+}
 
-  .title {
-      display:flex;
-      flex-direction: column;
-     text-align:center;
-     font-size: 35px;
-     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-     font-size: 55px;
-     font-style: normal;
-     font-variant: normal;
-     font-weight: 700;
-     line-height: 26.4px;
-     padding:20px;
-     margin:20px;
-  }
+.searchButton 
+{
+    text-align: center;
+    font-size:40px;
+    size:45px;
+    padding:10px;
+    margin:10px;
+}
+  
 
-  .searchBar {
-
-      text-align: center;
-      font-size: 40px;
-      size: 45px;
-      padding:10px;
-      margin:10px;
-  }
-
-  .searchButton {
-      text-align: center;
-      font-size:40px;
-      size:45px;
-      padding:10px;
-      margin:10px;
-  }
-  img {
-      padding:10px;
-      margin:10px;
-      width:150px;
-      height:150px;
-  }
-
-#resultsUL {
+#resultsUL 
+{
     display: flex;
     list-style: none;
     justify-content: center;
@@ -72,7 +76,12 @@
     flex-wrap: wrap;
 }
 
-.elementBox {
-    background-color: #f1bc7f;
-    width:
+#userbar 
+{
+    display: flex;
+    margin: 0px 20px 20px 20px;
+}
+
+.random {
+
 }
