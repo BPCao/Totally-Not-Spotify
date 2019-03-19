@@ -3,7 +3,7 @@ let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
 let userAccessToken = "BQApxp8vjvj0D63bNzDn4YcqkWwnvEGziStHlxG15X3xxaWcKU73q4JJgfv_-9NQ6tzGeHqdVF5EHZVG7EmYdl-C9Max4PO2hHnciMCr3thpaHU5rPnxhB8EVYDj5fsTYSd9LwpKP-feUCir4gLxgYGVpD_D_SU"
-
+let tracksId = document.getElementById('tracksId')
 // Searches albums by artist
 searchButton.addEventListener('click', function () 
 {
@@ -45,15 +45,17 @@ function getTracks(id)
         }
     })
         .then(response => response.json())
-        .then(({ items }) => {
-            let trackInfoList = items.map((item) => {
-                console.log(`${item.track_number}`)
-                console.log(`${item.name}`)
-                console.log(`${item.id}`)
-                return `${item.id}`
+        .then(({ items }) => 
+        {
+           list = items.map((item) => 
+            {
+                return `
+            
+            <li>${item.track_number}</li>
+            <li>${item.name}</li>
+            `
             })
-            console.log(trackInfoList)
-            idString = trackInfoList.join()
-            console.log(idString)
+            tracksId.innerHTML = list.join('')
+        
         })
 }
