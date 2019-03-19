@@ -4,7 +4,9 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQAbGXHZRI00-HI-rxyZs2UxRg4gi634CjJoMsvyDZZXlKWhyQjx1pBmKMS5k4_APbFwkqvKKdYDKXjXsW2ZohrrM78qn4Dp5CirEfHf7NsdxmDn99dfhJSAErDOwjsR71CvSF1tw2eTIVh8Sbt5iGkuEmYbAZcgVKuxteaQtBuJBNoSpZu5"
+let userAccessToken = "BQApxp8vjvj0D63bNzDn4YcqkWwnvEGziStHlxG15X3xxaWcKU73q4JJgfv_-9NQ6tzGeHqdVF5EHZVG7EmYdl-C9Max4PO2hHnciMCr3thpaHU5rPnxhB8EVYDj5fsTYSd9LwpKP-feUCir4gLxgYGVpD_D_SU"
+
+
 
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 
@@ -68,14 +70,25 @@ function getTracks(id)
         }
     })
         .then(response => response.json())
-        .then(({ items }) => 
-        {
-            items.map((item) => 
-            {
-                console.log(item.track_number)
-                console.log(item.name)
+        .then(({ items }) => {
+            let trackInfoList = items.map((item) => {
+                console.log(`${item.track_number}`)
+                console.log(`${item.name}`)
+                console.log(`${item.id}`)
+                return `${item.id}`
             })
+            console.log(trackInfoList)
+            idString = trackInfoList.join()
+            console.log(idString)
         })
+    // .then(getTrackFeatures({ items }))
 }
 
+// function getTrackFeatures({ items }) {
+//     let trackIDList = items.map((item) => {
+//         return item.id
+//     })
+//     console.loglog(trackIDList)
+// }
 
+// "https://api.spotify.com/v1/audio-features/?ids=4JpKVNYnVcJ8tuMKjAj50A,2NRANZE9UCmPAS5XVbXL40,24JygzOLM0EmRQeGtFcIcG" - H "Authorization: Bearer {your access token}"
