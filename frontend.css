@@ -29,7 +29,6 @@ img
     margin: 10px;
     text-align: center;
     line-height: 75px;
-
 }
 
 .title 
@@ -66,6 +65,51 @@ img
     margin:10px;
 }
   
+.trackLI 
+{
+    margin-bottom: 10px;
+}
+
+.trackLI p 
+{
+    padding: 0 20px 0 10px;
+}
+
+
+.trackNumber 
+{
+    float: left;
+}
+
+.featureValue 
+{
+    float: right;
+}
+
+.trackBox 
+{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+#featureSelect 
+{
+    float: right;
+    margin: 5px 10px 0 0;
+}
+
+#tracksId 
+{
+    list-style: none;
+}
+
+#tracksBox 
+{
+    display: flex;
+    flex-direction: column;
+}
+
 #resultsUL 
 {
     display: flex;
@@ -85,34 +129,3 @@ img
 {
   display: none;
 }  
-.random {
-
-}
-.trackLI {
-    margin-bottom: 10px;
-}
-.trackLI p {
-    padding: 0 20px 0 10px;
-}
-#tracksBox {
-    display: flex;
-    flex-direction: column;
-}
-.trackNumber {
-    float: left;
-}
-#featureSelect {
-    float: right;
-    margin: 5px 10px 0 0;
-}
-.featureValue {
-    float: right;
-}
-#tracksId {
-    list-style: none;
-}
-.trackBox {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-#loggedUser {

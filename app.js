@@ -3,9 +3,7 @@ let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
 let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
-
 let tracksId = document.getElementById('tracksId')
-
 
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
@@ -33,8 +31,8 @@ searchButton.addEventListener('click', function () {
         })
 })
 
-let trackInfoList
-let happinessList
+// let trackInfoList
+// let happinessList 
 function getTracks(id) {
     //place html visibility = show
     fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
@@ -97,12 +95,8 @@ function getTracks(id) {
 }
 
 
-
-
-
-
 function getTrackFeatures(idString) {
-    // pass a variable to show one of severl track features
+    // pass a variable to show one of several track features
     fetch("https://api.spotify.com/v1/audio-features/?ids=" + idString, {
         method: "GET",
         headers:
@@ -133,7 +127,6 @@ function getTrackFeatures(idString) {
             //             </li>`
             // })
             // happinessUL.innerHTML = happinessDisplay.join("")
-
         })
 }
 
