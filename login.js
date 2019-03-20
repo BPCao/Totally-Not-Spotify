@@ -1,14 +1,13 @@
 // Initial Settings
 let database = firebase.database()
-//Sign-In
 let registerHeader = document.getElementById("registerHeader")
 let userbar = document.getElementById("userbar")
 let emailTextBox = document.getElementById("emailTextBox")
 let passwordTextBox = document.getElementById("passwordTextBox")
 let registerButton = document.getElementById("registerButton")
 let loggedUser = document.getElementById("loggedUser")
-//Login
 let loginButton = document.getElementById("loginButton")
+let signOutButton = document.getElementById("signOutButton")
 
 
 
@@ -45,8 +44,9 @@ loginButton.addEventListener('click',function() {
         passwordTextBox.style.display = 'none';
         registerButton.style.display = 'none';
         loginButton.style.display = 'none';
-        loggedUser.style.display = 'block';
-        loggedUser.innerHTML = `<h3>Logged in under ${emailTextBox.value}</h3>`
+        signOutButton.style.display = 'block';
+        loggedUser.style.display = 'block'
+        loggedUser.innerHTML = `<h3>Account: ${emailTextBox.value}</h3>`
       } 
       else 
       {
@@ -66,20 +66,17 @@ loginButton.addEventListener('click',function() {
 // Sign-Out
 signOutButton.addEventListener('click',function(){
     firebase.auth().signOut().then(function() {
-    //   document.getElementById("storesUL").style.display = "none";
-    //   document.getElementById("itemBox").style.display = "none";
-    //   document.getElementById("itemForm").style.display = "none";
       location.reload().then(function(){}).catch(function(error) {
     });
   })
   })
 
 // Sign
-  firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-  }).catch(function(error) {
-    // An error happened.
-  });
+  // firebase.auth().signOut().then(function() {
+  //   // Sign-out successful.
+  // }).catch(function(error) {
+  //   // An error happened.
+  // });
 
 
 
