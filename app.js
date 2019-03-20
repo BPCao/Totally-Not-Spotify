@@ -4,7 +4,10 @@ let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
 let happinessUL = document.getElementById('happinessUL')
 let userAccessToken = "BQCq3nYe2LBM_xwXfGFpNLtlJCQPR2d3mOIXELYAZ28dW08dekaz2GjEDdUhxviO4LFhXmyeerPFt_qweytRJclC0NJ4USNWxeSgd4ui-EsR95lifgtKVPVn8IXqDVN81hfeCw5D8w9L6pGq61YexI8zbUOrxrg"
+
 let tracksId = document.getElementById('tracksId')
+
+
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
@@ -19,13 +22,13 @@ searchButton.addEventListener('click', function () {
         .then(({ tracks }) => {
             let resultsLItem = tracks.items.map((item) => {
                 return `<li>
-                    <h3>${item.album.artists[0].name}</h3>
+                        <h3>${item.album.artists[0].name}</h3>
                         <div class="elementBox">
                         <img onclick="getTracks('${item.album.id}')" src="${item.album.images[1].url}"></img>
                         <p>${item.album.name}</p>
                         <p>${item.album.release_date}</p>
                         </div>
-                </li>`
+                        </li>`
             })
             resultsUL.innerHTML = resultsLItem.join('')
         })
@@ -40,6 +43,7 @@ function getTracks(id) {
             method: "GET",
             headers:
             {
+
                 Authorization: `Bearer ${userAccessToken}`
             }
         })
