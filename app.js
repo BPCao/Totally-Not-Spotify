@@ -2,10 +2,14 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
+<<<<<<< HEAD
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
 let userAccessToken = "BQCq3nYe2LBM_xwXfGFpNLtlJCQPR2d3mOIXELYAZ28dW08dekaz2GjEDdUhxviO4LFhXmyeerPFt_qweytRJclC0NJ4USNWxeSgd4ui-EsR95lifgtKVPVn8IXqDVN81hfeCw5D8w9L6pGq61YexI8zbUOrxrg"
+=======
+let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
+>>>>>>> 6c53ec6eca8e80377f957a1af0de53c78a396d4b
 
 let tracksId = document.getElementById('tracksId')
 

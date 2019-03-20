@@ -81,6 +81,10 @@ img
     margin: 0px 20px 20px 20px;
 }
 
+#signOutButton 
+{
+  display: none;
+}  
 .random {
 
 }
@@ -112,5 +116,3 @@ img
     justify-content: space-between;
     border-bottom: 1px solid black;
 #loggedUser {
-    display: none;
-}
