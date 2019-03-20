@@ -1,7 +1,5 @@
 // Initial Settings
 let database = firebase.database()
-
-
 //Sign-In
 let emailTextBox = document.getElementById("emailTextBox")
 let passwordTextBox = document.getElementById("passwordTextBox")
