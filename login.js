@@ -33,6 +33,7 @@ loginButton.addEventListener('click',function() {
     let emailAddress = document.getElementById('emailTextBox').value
     let password = document.getElementById('passwordTextBox').value
     firebase.auth().signInWithEmailAndPassword(emailAddress,password)
+    console.log('yes you rock')
     // checking()
   })
 
@@ -66,3 +67,5 @@ function userName(emailAddress,password) {
     //   any: ''
     // }) Save for setting playlists
   }
+
+ 

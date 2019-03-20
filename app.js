@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQApxp8vjvj0D63bNzDn4YcqkWwnvEGziStHlxG15X3xxaWcKU73q4JJgfv_-9NQ6tzGeHqdVF5EHZVG7EmYdl-C9Max4PO2hHnciMCr3thpaHU5rPnxhB8EVYDj5fsTYSd9LwpKP-feUCir4gLxgYGVpD_D_SU"
+let userAccessToken = "BQCqrDB1_pfdbdOtLlJpiMmpiNVSnr2ZRep_DFxRzwsJSdMmz33MF-hkOTUPQY0j1KKkaZNnXl8cf65BX5Cd7MQoikTsNDd5DIi_-zN3SfBqa4AOlFzH5MMGK35LOGY42glTWqRWU8PAEeKZzimAJz1fHrU1Pxp3dYorYwQvg0yFprWVrg"
 let tracksId = document.getElementById('tracksId')
 // Searches albums by artist
 searchButton.addEventListener('click', function () 
@@ -59,3 +59,4 @@ function getTracks(id)
         
         })
 }
+
