@@ -66,7 +66,6 @@ img
     margin:10px;
 }
   
-
 #resultsUL 
 {
     display: flex;
@@ -80,8 +79,4 @@ img
 {
     display: flex;
     margin: 0px 20px 20px 20px;
-}
-
-.random {
-
 }
