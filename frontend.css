@@ -80,3 +80,7 @@ img
     display: flex;
     margin: 0px 20px 20px 20px;
 }
+
+#loggedUser {
+    display: none;
+}
