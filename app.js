@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQAYZFdrudiUTc6m0YsncvPXwa6ebayJxRF4nTc31iqViqDAcI_6yu4Ngt_mqHfhrRlWA5p_kpa04zPouUb7bg7pQsfaVIaEu_joj8wmh3OR7OTWR_BZTTyHcUdYnyV2bBFkT6Z3fwSrgD8YDqxatb3F__NtHjkFMvObS4PbJ2ENbiFX61eb"
+let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
 let tracksId = document.getElementById('tracksId')
 
 
