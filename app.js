@@ -2,23 +2,10 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-<<<<<<< HEAD
-<<<<<<< HEAD
 let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
-=======
-=======
-let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
->>>>>>> ed4cb1a0b2c63e468dfd0ec3a67923909278b88a
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
-let userAccessToken = "BQCq3nYe2LBM_xwXfGFpNLtlJCQPR2d3mOIXELYAZ28dW08dekaz2GjEDdUhxviO4LFhXmyeerPFt_qweytRJclC0NJ4USNWxeSgd4ui-EsR95lifgtKVPVn8IXqDVN81hfeCw5D8w9L6pGq61YexI8zbUOrxrg"
-<<<<<<< HEAD
-
-
->>>>>>> e18409c430a521ba31b0965f0af3aa394f57d5ea
-=======
->>>>>>> ed4cb1a0b2c63e468dfd0ec3a67923909278b88a
 let tracksId = document.getElementById('tracksId')
 
 // Searches albums by artist
@@ -33,7 +20,8 @@ searchButton.addEventListener('click', function () {
         })
         .then(response => response.json())
         .then(({ tracks }) => {
-            let resultsLItem = tracks.items.map((item) => {
+            let resultsLItem = tracks.items.map((item) => 
+            {
                 return `<li>
                         <h3>${item.album.artists[0].name}</h3>
                         <div class="elementBox">
@@ -49,22 +37,23 @@ searchButton.addEventListener('click', function () {
 
 // let trackInfoList
 // let happinessList 
-function getTracks(id) {
+function getTracks(id) 
+{
     //place html visibility = show
     fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
+    {
+        method: "GET",
+        headers:
         {
-            method: "GET",
-            headers:
-            {
-
-                Authorization: `Bearer ${userAccessToken}`
-            }
-        })
+            Authorization: `Bearer ${userAccessToken}`
+        }
+    })
         .then(response => response.json())
-        .then(({ items }) => {
+        .then(({ items }) => 
+        {
             trackInfoList = []
-            trackInfoList = items.map((item) => {
-
+            trackInfoList = items.map((item) => 
+            {
                 return {
                     id: `${item.id}`,
                     track_number: item.track_number,
@@ -74,8 +63,8 @@ function getTracks(id) {
             })
             let idString = ""
             console.log(trackInfoList)
-            trackInfoList.map((item) => {
-
+            trackInfoList.map((item) => 
+            {
                 idString += item.id + ","
                 //     return `
 
@@ -91,21 +80,12 @@ function getTracks(id) {
 }
 
 
-function getTrackFeatures(idString) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // pass a variable to show one of several track features
-=======
+function getTrackFeatures(idString) 
+{
     // pass a variable to show one of severl track features
     // let selectedValue = featureSelect.value
->>>>>>> e18409c430a521ba31b0965f0af3aa394f57d5ea
-=======
-
-    // pass a variable to show one of severl track features
-    // let selectedValue = featureSelect.value
-
->>>>>>> ed4cb1a0b2c63e468dfd0ec3a67923909278b88a
-    fetch("https://api.spotify.com/v1/audio-features/?ids=" + idString, {
+    fetch("https://api.spotify.com/v1/audio-features/?ids=" + idString, 
+    {
         method: "GET",
         headers:
         {
@@ -113,8 +93,10 @@ function getTrackFeatures(idString) {
         }
     })
         .then(features => features.json())
-        .then(({ audio_features }) => {
-            let featuresList = audio_features.map((feature) => {
+        .then(({ audio_features }) => 
+        {
+            let featuresList = audio_features.map((feature) => 
+            {
                 return feature.valence
             })
             console.log(featuresList)
@@ -153,42 +135,36 @@ function getTrackFeatures(idString) {
             //         default:
             //             break;
             //     }
-            happinessList = featuresList.map((valence) => {
-
-                if (valence >= 0.6) {
+            happinessList = featuresList.map((valence) => 
+            {
+                if (valence >= 0.6) 
+                {
                     return ":)"
                 }
-                else {
+                else 
+                {
                     return ":("
                 }
             })
             console.log(happinessList)
             displayTrackInfo()
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ed4cb1a0b2c63e468dfd0ec3a67923909278b88a
             // let happinessDisplay = happinessList.map((value) => {
             //     return `<li>
             //                 <h3>${value}</h3>
             //             </li>`
             // })
             // happinessUL.innerHTML = happinessDisplay.join("")
-<<<<<<< HEAD
-=======
->>>>>>> e18409c430a521ba31b0965f0af3aa394f57d5ea
-=======
-
->>>>>>> ed4cb1a0b2c63e468dfd0ec3a67923909278b88a
         })
 }
 
-function displayTrackInfo() {
-    for (let i = 0; i < trackInfoList.length; i++) {
+function displayTrackInfo() 
+{
+    for (let i = 0; i < trackInfoList.length; i++) 
+    {
         trackInfoList[i].happiness = happinessList[i]
     }
-    let list = trackInfoList.map((item) => {
-
+    let list = trackInfoList.map((item) => 
+    {
         return `
             
                     <li class="trackLI">
@@ -204,6 +180,7 @@ function displayTrackInfo() {
     tracksId.innerHTML = list.join('')
 }
 
-function addToPlaylist(name) {
+function addToPlaylist(name) 
+{
     playlist.push(name)
 }
