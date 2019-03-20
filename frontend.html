@@ -16,6 +16,23 @@
     <!-- Login Info -->
     <div id="userbar">
         <div>
+            <h3>Register</h3>
+            <input type="text" id="emailTextBox" placeholder="E-Mail" />
+            <input type="password" id="passwordTextBox" placeholder="Password" />
+            <button id="registerButton">Register</button>
+        </div>
+
+
+        <div>
+            <h4>Login</h4>
+            <input type="text" id="loginTextBox" placeholder="E-Mail" />
+            <input type="password" id="loginPasswordBox" placeholder="Password" />
+            <button id="loginButton">Login</button>
+        </div>
+
+        <div>
+            <h4>SignOut</h4>
+            <button id="signOutButton">SignOut</button>
         <h3 id="registerHeader">Register</h3>
         <input type="text" id="emailTextBox" placeholder="E-Mail"/>
         <input type="password" id="passwordTextBox" placeholder="Password"/>
@@ -37,41 +54,50 @@
     <div class="searchBarContainer">
         <div>
             <input type=text id="searchBar" placeholder="Search by Artist"></input>
-            <button id="searchButton" >Search Music!</button>
+            <button id="searchButton">Search Music!</button>
         </div>
-    <br>
-    <br>
+        <br>
+        <br>
         <div id="resultsBox">
             <ul id="resultsUL">
             </ul>
         </div>
 
-        <div>
-            <ul id="tracksId"></ul>
-            
-        </div> 
-    <br>
-    <br>
+        <div id="tracksEtc">
+            <div id="tracksBox">
+                <div id="featureSelectBox">
+                    <select id="featureSelect">
+                        <option>happiness</option>
+                        <option>danceability</option>
+                        <option>energy</option>
+                        <option>tempo</option>
+                    </select>
+                </div>
+                <ul id="tracksId"></ul>
+            </div>
+        </div>
+        <br>
+        <br>
     </div>
 
 
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = 
-  {
-    apiKey: "AIzaSyCQU-vy_cqbrk8fdCFGHwcSzd9f-WojWcI",
-    authDomain: "spotifytest-5ab95.firebaseapp.com",
-    databaseURL: "https://spotifytest-5ab95.firebaseio.com",
-    projectId: "spotifytest-5ab95",
-    storageBucket: "",
-    messagingSenderId: "578432907319"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="app.js"></script>
-<script src="login.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config =
+        {
+            apiKey: "AIzaSyCQU-vy_cqbrk8fdCFGHwcSzd9f-WojWcI",
+            authDomain: "spotifytest-5ab95.firebaseapp.com",
+            databaseURL: "https://spotifytest-5ab95.firebaseio.com",
+            projectId: "spotifytest-5ab95",
+            storageBucket: "",
+            messagingSenderId: "578432907319"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="app.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
