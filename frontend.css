@@ -20,7 +20,10 @@ img
 {
     display: flex;
     flex-direction: column;
-    background-color:lightblue;
+    background-color: antiquewhite;
+    justify-content: center;
+    padding: 20px;
+    
 }
 
 .searchBarContainer > div 
@@ -36,19 +39,22 @@ img
     display:flex;
     flex-direction: column;
     text-align:center;
-    font-size: 35px;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 55px;
+    font-size: 30px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
     line-height: 26.4px;
-    padding:20px;
-    margin:20px;
+    padding:5px;
+    margin:5px;
+    color:white;
 }
   
 .searchBar 
 {
+    display:flex;
+    justify-content: center;
+    justify-items: center;
     text-align: center;
     font-size: 40px;
     size: 45px;
@@ -119,13 +125,79 @@ img
     flex-wrap: wrap;
 }
 
-#userbar 
+/* #userbar 
 {
-    display: flex;
-    margin: 0px 20px 20px 20px;
-}
+     display: flex;
+     margin: 20px;
+     padding: 20px;
+    
+} */
 
+<<<<<<< HEAD
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+
+
+
+
+
+
+
+/**/
+
+  /* Add styles to the form container */
+.container {
+    display:grid;
+    grid-auto-flow: row;
+    max-width: 300px;
+    padding: 16px;
+    
+    padding: 50px;
+    margin: 100px;
+    
+  }
+  
+  /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: royalblue;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+
+
+
+ 
+=======
 #signOutButton 
 {
   display: none;
 }  
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b

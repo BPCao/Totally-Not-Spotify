@@ -2,10 +2,18 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
+<<<<<<< HEAD
+<<<<<<< HEAD
+let userAccessToken = "BQCqrDB1_pfdbdOtLlJpiMmpiNVSnr2ZRep_DFxRzwsJSdMmz33MF-hkOTUPQY0j1KKkaZNnXl8cf65BX5Cd7MQoikTsNDd5DIi_-zN3SfBqa4AOlFzH5MMGK35LOGY42glTWqRWU8PAEeKZzimAJz1fHrU1Pxp3dYorYwQvg0yFprWVrg"
+=======
+let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
+=======
 let userAccessToken = "BQBxVVh72TIDUvkCSPY5_LVsEdqoF23UHTzQRfuPkG62Vu7hpj1SFNs2Yo0wK5fgs2xTscwix99p_Dd4RmlL7eTF6OLA4Vu1LJUqtnPXjsmpaMi5v1RxGGFBf8b91S2-EEwfW5__ATQUquwTHJWYERFbfIZgBs0"
+>>>>>>> master
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []
 
@@ -72,6 +80,8 @@ function getTracks(id) {
         })
 }
 
+<<<<<<< HEAD
+=======
 
 function getTrackFeatures(idString) {
     // pass a variable to show one of severl track features
@@ -187,4 +197,8 @@ function displayTrackInfo(selectedValue) {
 function addToPlaylist(name) {
     playlist.push(name)
 }
+<<<<<<< HEAD
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
+=======
 
+>>>>>>> master

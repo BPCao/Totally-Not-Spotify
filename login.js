@@ -29,6 +29,15 @@ function userName(emailAddress, password) {
 }
 
 // Sign-In
+<<<<<<< HEAD
+loginButton.addEventListener('click',function() {
+    let emailAddress = document.getElementById('emailTextBox').value
+    let password = document.getElementById('passwordTextBox').value
+    firebase.auth().signInWithEmailAndPassword(emailAddress,password)
+    console.log('yes you rock')
+    // checking()
+  })
+=======
 loginButton.addEventListener('click', function () {
   let emailAddress = document.getElementById('emailTextBox').value
   let password = document.getElementById('passwordTextBox').value
@@ -58,6 +67,7 @@ loginButton.addEventListener('click', function () {
   });
   // checking()
 })
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
 
 // Sign-Out
 signOutButton.addEventListener('click', function () {
@@ -74,6 +84,22 @@ signOutButton.addEventListener('click', function () {
 //   // An error happened.
 // });
 
+<<<<<<< HEAD
+
+
+function userName(emailAddress,password) {
+    let usersRef = database.ref("users")
+    let userRef = usersRef.push({
+      name: emailAddress,
+      password: password
+    })
+    // userRef.child("stores").set({
+    //   any: ''
+    // }) Save for setting playlists
+  }
+
+ 
+=======
 function userName(emailAddress, password) {
   let usersRef = database.ref("Users")
   let userRef = usersRef.push({
@@ -84,3 +110,4 @@ function userName(emailAddress, password) {
   //   any: ''
   // }) Save for setting playlists
 }
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
