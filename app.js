@@ -2,16 +2,22 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBxVVh72TIDUvkCSPY5_LVsEdqoF23UHTzQRfuPkG62Vu7hpj1SFNs2Yo0wK5fgs2xTscwix99p_Dd4RmlL7eTF6OLA4Vu1LJUqtnPXjsmpaMi5v1RxGGFBf8b91S2-EEwfW5__ATQUquwTHJWYERFbfIZgBs0"
+let userAccessToken = "BQCAOZX933TJtbL43xDfH63XtPA6sxBNtnnCqru6WqJRrUFk_rgGfhGlZPS0owNciDFqK0MrDLwrwH_-gEM_BLeEk57NnCOd9cVhBKb68uEgz8LY_4_KCx65Sqi6yie_mRQVLxnkQULB1EnPTwgRmxGBWCNFn1LE-T0Cyn8D-0jI8YO9YRbf"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
+let playBase = database.ref("Playlist")
 let playlist = []
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []
-
+let usersRef = database.ref("Users")
 let selectedValue = "happiness"
 let bigAlbumImage = document.getElementById('bigAlbumImage')
 currentAlbumID = ""
+let musicStorage = firebase.auth().currentUser
+
+
+
+
 // let selectedValue = featureSelect.value
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
@@ -188,7 +194,7 @@ function displayTrackInfo(selectedValue) {
             
                     <li class="trackLI">
                         <div class="trackBox">
-                            <h3 onclick="addToPlaylist(${item.name})">+</h3>
+                            <h3 onclick="addToPlaylist('${item.name}')">+</h3>
                             <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <p class="featureValue">${featuretoDisplay}</p>
@@ -200,7 +206,9 @@ function displayTrackInfo(selectedValue) {
 }
 
 function addToPlaylist(name) {
+    console.log("Hello")
     playlist.push(name)
+    console.log(musicStorage)
 }
 
 featureSelect.addEventListener('change', () => {
