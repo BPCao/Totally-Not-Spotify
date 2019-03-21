@@ -12,37 +12,36 @@ let playlist = []
 let userAccessToken = "BQD81JUzU6mMe5jA7fxF9e_LBMWfbVz0ZNIj-_mvFfG7dP3W9Kewd6hmkHIG3I_PyHaBfhMMsBP7Za6n9IX22ptwMteDSKPUYlGldeh_7y6XDEfP2zc66ajHGmQn_cv4RrckaRogUTrOyW4QEoq4_TZSQTj3d73a64ZpVJuU_yAPQesGeOvy"
 
 // Searches albums by artist
-searchButton.addEventListener('click', function () {
+searchButton.addEventListener('click', function () 
+{
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
+    {
+        method: "GET",
+        headers:
         {
-            method: "GET",
-            headers:
-            {
-                Authorization: `Bearer ${userAccessToken}`
-            }
+            Authorization: `Bearer ${userAccessToken}`
+        }
+    })
+    .then(response => response.json())
+    .then(({ tracks }) => 
+    {
+        let resultsLItem = tracks.items.map((item) => 
+        {
+            return `<li>
+                    <h3>${item.album.artists[0].name}</h3>
+                    <div class="elementBox">
+                    <img onclick="getTracks('${item.album.id}')" src="${item.album.images[1].url}"></img>
+                    <p>${item.album.name}</p>
+                    <p>${item.album.release_date}</p>
+                    </div>
+                    </li>`
         })
-        .then(response => response.json())
-        .then(({ tracks }) => {
-            let resultsLItem = tracks.items.map((item) => 
-            {
-                return `<li>
-                        <h3>${item.album.artists[0].name}</h3>
-                        <div class="elementBox">
-                        <img onclick="getTracks('${item.album.id}')" src="${item.album.images[1].url}"></img>
-                        <p>${item.album.name}</p>
-                        <p>${item.album.release_date}</p>
-                        </div>
-                        </li>`
-            })
-            resultsUL.innerHTML = resultsLItem.join('')
-        })
+        resultsUL.innerHTML = resultsLItem.join('')
+    })
 })
 
-// let trackInfoList
-// let happinessList 
 function getTracks(id) 
 {
-    //place html visibility = show
     fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
     {
         method: "GET",
@@ -65,20 +64,11 @@ function getTracks(id)
                 }
             })
             let idString = ""
-            console.log(trackInfoList)
             trackInfoList.map((item) => 
             {
                 idString += item.id + ","
-                //     return `
-
-                //         <li><p>${item.track_number}</p>
-                //             <p>${item.name}</p>
-                //         </li>
-                //         `
             })
-            // tracksId.innerHTML = list.join('')
             getTrackFeatures(idString)
-
         })
 }
 
