@@ -5,74 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href='frontend.css'>
-    </style>
 </head>
 
 <body>
     <header class="title">Totally Not Spotify</header>
-    <!-- Login Info -->
-    <div id="userbar">
-        <div>
-            <h3 id="registerHeader">Register/Sign-In</h3>
-            <input type="text" id="emailTextBox" placeholder="E-Mail" />
-            <input type="password" id="passwordTextBox" placeholder="Password" />
-            <button id="registerButton">Register</button>
-            <button id="loginButton">Login</button>
-            <div id="loggedUser"></div>
-            <button id="signOutButton">SignOut</button>
-        </div>
-    </div>
-
-    <!-- Search Bar -->
+    <div id="userID"></div>
+    <br>
+    <br>
     <div class="searchBarContainer">
-        <div>
-            <input type=text id="searchBar" placeholder="Search by Artist"></input>
-            <button id="searchButton">Search Music!</button>
-        </div>
-        <br>
-        <br>
-        <div id="resultsBox">
-            <ul id="resultsUL">
+        <h3>Playlist</h3>
+        <div id="songBox">
+            <ul id="mikeBox">
             </ul>
         </div>
-
-        <div id="tracksEtc">
-            <div id="tracksBox">
-                <div id="featureSelectBox">
-                    <select id="featureSelect">
-                        <option>happiness</option>
-                        <option>danceability</option>
-                        <option>energy</option>
-                        <option>tempo</option>
-                    </select>
-                </div>
-                <ul id="tracksId"></ul>
+        <!-- Search Bar -->
+        <div class="searchBarContainer">
+            <div>
+                <input type=text id="searchBar" placeholder="Search by Artist"></input>
+                <button id="searchButton">Search Music!</button>
             </div>
+            <br>
+            <br>
+            <div id="resultsBox">
+                <ul id="resultsUL">
+                </ul>
+            </div>
+
+            <div id="tracksEtc">
+                <div id="tracksBox">
+                    <img id="bigAlbumImage" src="https://i.scdn.co/image/966ade7a8c43b72faa53822b74a899c675aaafee" />
+                    <div id="featureSelectBox">
+                        <select id="featureSelect" name="feature">
+                            <option value="happiness">happiness</option>
+                            <option value="danceability">danceability</option>
+                            <option value="energy">energy</option>
+                            <option value="tempo">tempo</option>
+                        </select>
+                    </div>
+                    <ul id="tracksId"></ul>
+                </div>
+            </div>
+            <br>
+            <br>
         </div>
-        <br>
-        <br>
-    </div>
 
+</body>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config =
-        {
-            apiKey: "AIzaSyCQU-vy_cqbrk8fdCFGHwcSzd9f-WojWcI",
-            authDomain: "spotifytest-5ab95.firebaseapp.com",
-            databaseURL: "https://spotifytest-5ab95.firebaseio.com",
-            projectId: "spotifytest-5ab95",
-            storageBucket: "",
-            messagingSenderId: "578432907319"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <script src="app.js"></script>
-    <script src="login.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config =
+    {
+        apiKey: "AIzaSyCQU-vy_cqbrk8fdCFGHwcSzd9f-WojWcI",
+        authDomain: "spotifytest-5ab95.firebaseapp.com",
+        databaseURL: "https://spotifytest-5ab95.firebaseio.com",
+        projectId: "spotifytest-5ab95",
+        storageBucket: "",
+        messagingSenderId: "578432907319"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="login2.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>
