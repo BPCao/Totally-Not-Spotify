@@ -14,9 +14,31 @@ let userAccessToken = "BQD81JUzU6mMe5jA7fxF9e_LBMWfbVz0ZNIj-_mvFfG7dP3W9Kewd6hmk
 
 // let selectedValue = featureSelect.value
 // Searches albums by artist
-searchButton.addEventListener('click', function () {
+searchButton.addEventListener('click', function () 
+{
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
+    {
+        method: "GET",
+        headers:
         {
+<<<<<<< HEAD
+            Authorization: `Bearer ${userAccessToken}`
+        }
+    })
+    .then(response => response.json())
+    .then(({ tracks }) => 
+    {
+        let resultsLItem = tracks.items.map((item) => 
+        {
+            return `<li>
+                    <h3>${item.album.artists[0].name}</h3>
+                    <div class="elementBox">
+                    <img onclick="getTracks('${item.album.id}')" src="${item.album.images[1].url}"></img>
+                    <p>${item.album.name}</p>
+                    <p>${item.album.release_date}</p>
+                    </div>
+                    </li>`
+=======
             method: "GET",
             headers:
             {
@@ -36,13 +58,21 @@ searchButton.addEventListener('click', function () {
                         </li>`
             })
             resultsUL.innerHTML = resultsLItem.join('')
+>>>>>>> a9869fc8e01e12e916a404dc8cb0c6f0b7996111
         })
+        resultsUL.innerHTML = resultsLItem.join('')
+    })
 })
 
+<<<<<<< HEAD
+function getTracks(id) 
+{
+=======
 let finalTrackInfoList = []
 let featureToDisplayList
 function getTracks(id) {
     //place html visibility = show
+>>>>>>> a9869fc8e01e12e916a404dc8cb0c6f0b7996111
     fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
         {
             method: "GET",
@@ -67,18 +97,15 @@ function getTracks(id) {
             // trackInfoFeatureList.push(trackInfoList)
             // console.log(trackInfoFeatureList)
             let idString = ""
+<<<<<<< HEAD
+            trackInfoList.map((item) => 
+            {
+=======
             trackInfoList.map((item) => {
+>>>>>>> a9869fc8e01e12e916a404dc8cb0c6f0b7996111
                 idString += item.id + ","
-                //     return `
-
-                //         <li><p>${item.track_number}</p>
-                //             <p>${item.name}</p>
-                //         </li>
-                //         `
             })
-            // tracksId.innerHTML = list.join('')
             getTrackFeatures(idString)
-
         })
 }
 
