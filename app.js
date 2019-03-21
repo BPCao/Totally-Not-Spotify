@@ -5,8 +5,12 @@ let resultsUL = document.getElementById('resultsUL')
 let userAccessToken = "BQBJBVPB0eBK4_pq3bzaR7IrQb8cLCASvrNU0ttPBukErdC3_sqVfaWOrtQb8gNeImaVBGlD07bF4DJr_aSgPbqpedKaFVI_BAVbcu83aM9mwzmo8oQQ9NGgyjnw82CPrOPWAGZAjikVunV-45v2_NTQ-IEdUWY"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
-let playlist = []
 let tracksId = document.getElementById('tracksId')
+let songBox = document.getElementById('songBox')
+let mikeBox = document.getElementById('mikeBox')
+let playlistBase = database.ref("Playlist")
+let playlist = []
+let userAccessToken = "BQD81JUzU6mMe5jA7fxF9e_LBMWfbVz0ZNIj-_mvFfG7dP3W9Kewd6hmkHIG3I_PyHaBfhMMsBP7Za6n9IX22ptwMteDSKPUYlGldeh_7y6XDEfP2zc66ajHGmQn_cv4RrckaRogUTrOyW4QEoq4_TZSQTj3d73a64ZpVJuU_yAPQesGeOvy"
 
 // let selectedValue = featureSelect.value
 // Searches albums by artist
@@ -158,6 +162,17 @@ function populateTrackFeatures(features) {
         }
         trackInfoList[i].tempo = tempoValue + " bpm"
     }
+  
+let list = trackInfoList.map((item) => 
+    {
+        return `<li class="trackLI">
+                    <div class="trackBox">
+                        <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+                        <p class="trackNumber">${item.track_number}-</p>
+                        <p id="${item.id}">${item.name}</p>
+                        <p class="featureValue">${item.happiness}</p>
+                    </div>
+                </li>`
     return trackInfoList
 
 }
@@ -202,10 +217,17 @@ function displayTrackInfo(selectedValue) {
     tracksId.innerHTML = list.join('')
 }
 
+
 function addToPlaylist(name) {
     playlist.push(name)
+    playlistBase.push(name)
+
+    console.log(playlist)
 }
 
+// function displayPlaylist() {
+//     playlist.map()
+// }
 // ============The stuff to paste============
 
             // featureToDisplayList = featuresList.map((selectedValue) => {
