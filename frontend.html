@@ -40,6 +40,7 @@
 
 <body>
     <header class="title">Totally Not Spotify</header>
+<<<<<<< HEAD
 
     
 
@@ -177,19 +178,43 @@
 <!-- <div class = "actualSearchBarContainer"> -->
     
     <div class="searchBarContainer"> 
-            <input type=text id="searchBar" placeholder="Search by Artist"></input>
-            <button id="searchButton" >Search Music!</button>
+=======
+    <!-- Login Info -->
+    <div id="userbar">
+        <div>
+            <h3 id="registerHeader">Register/Sign-In</h3>
+            <input type="text" id="emailTextBox" placeholder="E-Mail" />
+            <input type="password" id="passwordTextBox" placeholder="Password" />
+            <button id="registerButton">Register</button>
+            <button id="loginButton">Login</button>
+            <div id="loggedUser"></div>
+            <button id="signOutButton">SignOut</button>
         </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="searchBarContainer">
+        <div>
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
+            <input type=text id="searchBar" placeholder="Search by Artist"></input>
+            <button id="searchButton">Search Music!</button>
+        </div>
+<<<<<<< HEAD
         
     <br>
     <br>
 
     
+=======
+        <br>
+        <br>
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
         <div id="resultsBox">
             <ul id="resultsUL">
             </ul>
         </div>
 
+<<<<<<< HEAD
         <div>
             <ul id="tracksId"></ul>
             
@@ -199,11 +224,30 @@
     <br>
     <br>
     
+=======
+        <div id="tracksEtc">
+            <div id="tracksBox">
+                <div id="featureSelectBox">
+                    <select id="featureSelect">
+                        <option>happiness</option>
+                        <option>danceability</option>
+                        <option>energy</option>
+                        <option>tempo</option>
+                    </select>
+                </div>
+                <ul id="tracksId"></ul>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
 
     </body>
   
         
 
+<<<<<<< HEAD
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 <script>
@@ -224,5 +268,25 @@
     
 
 
+=======
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config =
+        {
+            apiKey: "AIzaSyCQU-vy_cqbrk8fdCFGHwcSzd9f-WojWcI",
+            authDomain: "spotifytest-5ab95.firebaseapp.com",
+            databaseURL: "https://spotifytest-5ab95.firebaseio.com",
+            projectId: "spotifytest-5ab95",
+            storageBucket: "",
+            messagingSenderId: "578432907319"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="app.js"></script>
+    <script src="login.js"></script>
+</body>
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
 
 </html>
