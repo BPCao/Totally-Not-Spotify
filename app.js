@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBJBVPB0eBK4_pq3bzaR7IrQb8cLCASvrNU0ttPBukErdC3_sqVfaWOrtQb8gNeImaVBGlD07bF4DJr_aSgPbqpedKaFVI_BAVbcu83aM9mwzmo8oQQ9NGgyjnw82CPrOPWAGZAjikVunV-45v2_NTQ-IEdUWY"
+let userAccessToken = "BQDTW9LxV7CWi2EaTvO1xA-XU_kkH0Rhbf-hNKCs-uTLTbNsAlEX0gYaoEpXu1JTz5GrRBENIsfW_pfdQi64NAK2KLw_9DG6ufeXQ1l0B8hIW0e0BkXSdYO4igjFPc3BAojt9vY67IhJ4WD6UVN1qCpSvWz7NZ0"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
@@ -65,14 +65,7 @@ function getTracks(id) {
             let idString = ""
             trackInfoList.map((item) => {
                 idString += item.id + ","
-                //     return `
-
-                //         <li><p>${item.track_number}</p>
-                //             <p>${item.name}</p>
-                //         </li>
-                //         `
             })
-            // tracksId.innerHTML = list.join('')
             getTrackFeatures(idString)
 
         })
@@ -115,12 +108,6 @@ function getTrackFeatures(idString) {
 
     // console.log(happinessList)
     displayTrackInfo(selectedValue)
-    // let happinessDisplay = happinessList.map((value) => {
-    //     return `<li>
-    //                 <h3>${value}</h3>
-    //             </li>`
-    // })
-    // happinessUL.innerHTML = happinessDisplay.join("")
 }
 
 function populateTrackFeatures(features) {
@@ -130,8 +117,6 @@ function populateTrackFeatures(features) {
         let danceValue = features[i].danceability
         let energyValue = features[i].energy
         let tempoValue = features[i].tempo
-        // possibily loop through trackinfofeaturelist to asssociate tracks with values
-        // for (trackInfoFeatureList[i])
         if (happyValue > 0.6) {
 
             trackInfoList[i].happiness = ":)"
@@ -164,10 +149,6 @@ function populateTrackFeatures(features) {
 
 
 function displayTrackInfo(selectedValue) {
-    // for (let i = 0; i < trackInfoList.length; i++) {
-    //     trackInfoList[i].selectedValue = featureToDisplayList[i]
-    // }
-    // let selectedValue = featureSelect.value
 
     let list = finalTrackInfoList.map((item) => {
         console.log(item.tempo)
@@ -206,85 +187,3 @@ function addToPlaylist(name) {
     playlist.push(name)
 }
 
-// ============The stuff to paste============
-
-            // featureToDisplayList = featuresList.map((selectedValue) => {
-            // happinessList = []
-            // danceabilityList = []
-            // energyList = []
-            // rempoList = []
-            // for (i = 0; i < featuresList; i++) {
-            //     let happyValue = featuresList[i].valence
-            //     let danceValue = featuresList[i].danceability
-            //     let energyValue = featuresList[i].energy
-            //     let tempoValue = featuresList[i].tempo
-            //     if (happyValue > 0.6) {
-            //         console.log('trackinfolist', trackInfoList[i])
-            //         trackInfoList[i].happiness = ":)"
-            //     }
-            //     else {
-            //         trackInfoList[i].happiness = ":)"
-            //     }
-
-            //     if (danceValue > 0.5) {
-            //         trackInfoList[i].danceability = "Yes"
-            //     }
-            //     else {
-            //         trackInfoList[i].danceability = "No"
-            //     }
-            //     if (energyValue > 0.6) {
-            //         trackInfoList[i].energy = "high energy"
-            //     }
-            //     else {
-            //         trackInfoList[i].energy = "low energy"
-            //     }
-            //     trackInfoList[i].tempo = tempoValue + " bpm"
-            // }
-            // switch (selectedValue) {
-            //     case "happiness":
-            //         featureToDisplayList = []
-            //         featureToDisplayList = featuresList.map((valence) => {
-
-            //             if (valence > 0.6) {
-            //                 result = ":)"
-            //             }
-            //             else {
-            //                 result = ":("
-            //             }
-            //             return result
-            //         })
-            //         break;
-            //     case "danceability":
-            //         featureToDisplayList = []
-            //         featureToDisplayList = featuresList.map((danceability) => {
-            //             if (danceability > 0.5) {
-            //                 result = "yes"
-            //             }
-            //             else {
-            //                 result = "no"
-            //             }
-            //             return result
-            //         })
-            //         break;
-            //     case "energy":
-            //         featureToDisplayList = []
-            //         featureToDisplayList = featuresList.map((energy) => {
-            //             if (energy > 0.6) {
-            //                 result = "high energy"
-            //             }
-            //             else {
-            //                 result = "low energy"
-            //             }
-            //             return result
-            //         })
-            //         break;
-            //     case "tempo":
-            //         featureToDisplayList = []
-            //         featureToDisplayList = featuresList.map((tempo) => {
-            //             result = tempo + " bpm"
-            //             return result
-            //         })
-            //         break;
-            //     default:
-            //         break;
-            // }
