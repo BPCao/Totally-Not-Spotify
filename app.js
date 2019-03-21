@@ -2,11 +2,12 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQDTW9LxV7CWi2EaTvO1xA-XU_kkH0Rhbf-hNKCs-uTLTbNsAlEX0gYaoEpXu1JTz5GrRBENIsfW_pfdQi64NAK2KLw_9DG6ufeXQ1l0B8hIW0e0BkXSdYO4igjFPc3BAojt9vY67IhJ4WD6UVN1qCpSvWz7NZ0"
+let userAccessToken = "BQBxVVh72TIDUvkCSPY5_LVsEdqoF23UHTzQRfuPkG62Vu7hpj1SFNs2Yo0wK5fgs2xTscwix99p_Dd4RmlL7eTF6OLA4Vu1LJUqtnPXjsmpaMi5v1RxGGFBf8b91S2-EEwfW5__ATQUquwTHJWYERFbfIZgBs0"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
 let tracksId = document.getElementById('tracksId')
+let trackInfoList = []
 
 // let selectedValue = featureSelect.value
 // Searches albums by artist
