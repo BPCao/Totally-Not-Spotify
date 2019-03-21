@@ -1,6 +1,7 @@
 let userID = document.getElementById("userID")
 let database = firebase.database()
-let signOutButton = document.getElementById("signOutButton")
+let logoutButton = document.getElementById("logoutButton")
+
 firebase.auth().onAuthStateChanged(function (user) 
 {
     if (user) 
@@ -9,11 +10,10 @@ firebase.auth().onAuthStateChanged(function (user)
     }
 })
 
-signOutButton.addEventListener('click', function ()
-{
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-    }).catch(function(error) {
-        // An error happened.
-    });
+// Sign-Out
+ logoutButton.addEventListener('click', function () 
+ {
+   firebase.auth().signOut()
+    window.location = "login.html"
 })
+ 
