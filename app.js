@@ -2,12 +2,13 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQCllWE9pSE71_H53cWm7kIK8aszNAdo6wA30GkG-QOXE2TIxhnX5pEjEO7S_JC23PKFeDf3MJeG8KFLvnl1v0GB0a8-2NKOWYiaspPm03b2nr98iiPdZqyJWO8NX_XLp5Miu3VPdrgEDhabIKCtoYErCRxu8JLCLcnrNvHwmpags1M73_FW"
+let userAccessToken = "BQBxVVh72TIDUvkCSPY5_LVsEdqoF23UHTzQRfuPkG62Vu7hpj1SFNs2Yo0wK5fgs2xTscwix99p_Dd4RmlL7eTF6OLA4Vu1LJUqtnPXjsmpaMi5v1RxGGFBf8b91S2-EEwfW5__ATQUquwTHJWYERFbfIZgBs0"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []
+
 let selectedValue = "happiness"
 let bigAlbumImage = document.getElementById('bigAlbumImage')
 currentAlbumID = ""
