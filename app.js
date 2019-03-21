@@ -2,11 +2,14 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
-let playlist = []
 let tracksId = document.getElementById('tracksId')
+let songBox = document.getElementById('songBox')
+let mikeBox = document.getElementById('mikeBox')
+let playlistBase = database.ref("Playlist")
+let playlist = []
+let userAccessToken = "BQD81JUzU6mMe5jA7fxF9e_LBMWfbVz0ZNIj-_mvFfG7dP3W9Kewd6hmkHIG3I_PyHaBfhMMsBP7Za6n9IX22ptwMteDSKPUYlGldeh_7y6XDEfP2zc66ajHGmQn_cv4RrckaRogUTrOyW4QEoq4_TZSQTj3d73a64ZpVJuU_yAPQesGeOvy"
 
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
@@ -165,22 +168,27 @@ function displayTrackInfo()
     }
     let list = trackInfoList.map((item) => 
     {
-        return `
-            
-                    <li class="trackLI">
-                        <div class="trackBox">
-                            <h3 onclick="addToPlaylist(${item.name})">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
-                            <p id="${item.id}">${item.name}</p>
-                            <p class="featureValue">${item.happiness}</p>
-                        </div>
-                    </li>
-                    `
+        return `<li class="trackLI">
+                    <div class="trackBox">
+                        <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+                        <p class="trackNumber">${item.track_number}-</p>
+                        <p id="${item.id}">${item.name}</p>
+                        <p class="featureValue">${item.happiness}</p>
+                    </div>
+                </li>`
     })
     tracksId.innerHTML = list.join('')
 }
 
 function addToPlaylist(name) 
 {
+    
     playlist.push(name)
+    playlistBase.push(name)
+
+    console.log(playlist)
 }
+
+// function displayPlaylist() {
+//     playlist.map()
+// }

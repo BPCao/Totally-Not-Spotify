@@ -75,7 +75,7 @@ signOutButton.addEventListener('click', function () {
 // });
 
 function userName(emailAddress, password) {
-  let usersRef = database.ref("users")
+  let usersRef = database.ref("Users")
   let userRef = usersRef.push({
     name: emailAddress,
     password: password
