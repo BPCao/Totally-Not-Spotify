@@ -2,15 +2,25 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQCllWE9pSE71_H53cWm7kIK8aszNAdo6wA30GkG-QOXE2TIxhnX5pEjEO7S_JC23PKFeDf3MJeG8KFLvnl1v0GB0a8-2NKOWYiaspPm03b2nr98iiPdZqyJWO8NX_XLp5Miu3VPdrgEDhabIKCtoYErCRxu8JLCLcnrNvHwmpags1M73_FW"
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+let userAccessToken = "BQCqrDB1_pfdbdOtLlJpiMmpiNVSnr2ZRep_DFxRzwsJSdMmz33MF-hkOTUPQY0j1KKkaZNnXl8cf65BX5Cd7MQoikTsNDd5DIi_-zN3SfBqa4AOlFzH5MMGK35LOGY42glTWqRWU8PAEeKZzimAJz1fHrU1Pxp3dYorYwQvg0yFprWVrg"
+=======
+let userAccessToken = "BQBD3YjFyPhz0C87FyTmPIhu9hupxCmtzp2xF8rSaOYvt4UiFLQQaOJgoKbExWOjZrptOG_AVzKDPp4FK6Oc-9HU3Pyo0EbziRyFA6gVC_g0N_YzonUopZAbjhXSozEGMRFipQU8jCaA0V5g7-F0260Z4cTWPpyxO3JMZO-brenEroGCfM-l"
+=======
+let userAccessToken = "BQBxVVh72TIDUvkCSPY5_LVsEdqoF23UHTzQRfuPkG62Vu7hpj1SFNs2Yo0wK5fgs2xTscwix99p_Dd4RmlL7eTF6OLA4Vu1LJUqtnPXjsmpaMi5v1RxGGFBf8b91S2-EEwfW5__ATQUquwTHJWYERFbfIZgBs0"
+>>>>>>> master
+=======
+let userAccessToken = "BQBML-njnt2--vcEa8K5v0nu_NPcaqATdwgNIoTip-1vwZa96-L828zMtS6re5RW36zjBUTI6UQpboLOHJZJxs2kSoT25dS0Q5xgc7sijgfKWqj_KlEWHhK4DYxIxPMKnlcdv0CO2gG5aEUDXyl0VWbg-ZRBnhXD8bmEuEbmg_Oqpp-Tu3i1"
+>>>>>>> 42d4d9fb6caecba7f0c7204d7ffadce13e402d32
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playlist = []
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []
-let selectedValue = "happiness"
-let bigAlbumImage = document.getElementById('bigAlbumImage')
-currentAlbumID = ""
+
 // let selectedValue = featureSelect.value
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
@@ -40,9 +50,9 @@ searchButton.addEventListener('click', function () {
 
 let finalTrackInfoList = []
 let featureToDisplayList
-async function getTracks(id) {
-    currentAlbumID = id
-    let response = await fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
+function getTracks(id) {
+    //place html visibility = show
+    fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
         {
             method: "GET",
             headers:
@@ -50,55 +60,36 @@ async function getTracks(id) {
                 Authorization: `Bearer ${userAccessToken}`
             }
         })
-    let json = await response.json()
+        .then(response => response.json())
+        .then(({ items }) => {
+            trackInfoList = []
+            trackInfoList = items.map((item) => {
+                return {
+                    id: `${item.id}`,
+                    track_number: item.track_number,
+                    name: item.name,
+                    happiness: ""
+                    // happiness: ""
+                }
 
-    trackInfoList = json.items.map((item) => {
-        return {
-            id: `${item.id}`,
-            track_number: item.track_number,
-            name: item.name,
-            happiness: ""
-        }
-    })
+            })
+            // trackInfoFeatureList.push(trackInfoList)
+            // console.log(trackInfoFeatureList)
+            let idString = ""
+            trackInfoList.map((item) => {
+                idString += item.id + ","
+            })
+            getTrackFeatures(idString)
 
-    let idString = ""
-
-    idString += trackInfoList.map((item) => {
-        return item.id
-    })
-    getTrackFeatures(idString)
-
-
-    /*
-            // .then(response => response.json())
-            .then(({ items }) => {
-                // trackInfoList = []
-                trackInfoList = items.map((item) => {
-                    return {
-                        id: `${item.id}`,
-                        track_number: item.track_number,
-                        name: item.name,
-                        happiness: ""
-                        // happiness: ""
-                    }
-    
-                })
-                // trackInfoFeatureList.push(trackInfoList)
-                // console.log(trackInfoFeatureList)
-                let idString = ""
-                trackInfoList.map((item) => {
-                    idString += item.id + ","
-                })
-                getTrackFeatures(idString)
-    
-            }) */
+        })
 }
 
-
+<<<<<<< HEAD
+=======
 
 function getTrackFeatures(idString) {
     // pass a variable to show one of severl track features
-    selectedValue = featureSelect.value
+    let selectedValue = featureSelect.value
 
     fetch("https://api.spotify.com/v1/audio-features/?ids=" + idString,
         {
@@ -123,12 +114,19 @@ function getTrackFeatures(idString) {
             })
 
             finalTrackInfoList = populateTrackFeatures(featuresList)
-            displayTrackInfo(selectedValue)
+            // featureToDisplayList = []
+            // ==============New Functionality Here ============
+            // =================Past Crap here=============
+
+            // ============================================
         })
 
+    // console.log(happinessList)
+    displayTrackInfo(selectedValue)
 }
 
 function populateTrackFeatures(features) {
+    console.log(features)
     for (i = 0; i < features.length; i++) {
         let happyValue = features[i].valence
         let danceValue = features[i].danceability
@@ -137,10 +135,12 @@ function populateTrackFeatures(features) {
         if (happyValue > 0.6) {
 
             trackInfoList[i].happiness = ":)"
+            console.log(happyValue)
 
         }
         else {
             trackInfoList[i].happiness = ":("
+            console.log(happyValue)
 
         }
 
@@ -201,9 +201,8 @@ function displayTrackInfo(selectedValue) {
 function addToPlaylist(name) {
     playlist.push(name)
 }
+<<<<<<< HEAD
+>>>>>>> f0e60d864c06d96880644e2c2cb0a9f21b04738b
+=======
 
-featureSelect.addEventListener('change', () => {
-    document.querySelector('select[name="feature"]').onchange = displayTrackInfo(event.target.value);
-
-}, false)
-
+>>>>>>> master

@@ -2,81 +2,33 @@
 let database = firebase.database()
 let registerHeader = document.getElementById("registerHeader")
 let userbar = document.getElementById("userbar")
-let emailTextBox = document.getElementById("emailTextBox")
-let passwordTextBox = document.getElementById("passwordTextBox")
+let loginEmail = document.getElementById("loginEmail")
+let loginPassword = document.getElementById("loginPassword")
+let registerEmail = document.getElementById("registerEmail")
+let registerPassword = document.getElementById("registerPassword")
 let registerButton = document.getElementById("registerButton")
 let loggedUser = document.getElementById("loggedUser")
 let loginButton = document.getElementById("loginButton")
+let userID = document.getElementById("userID")
 let signOutButton = document.getElementById("signOutButton")
 
 
-// Create User
-registerButton.addEventListener('click', function () {
-  let emailAddress = document.getElementById('emailTextBox').value
-  let password = document.getElementById('passwordTextBox').value
+// Create User (Database has user but not authenticated in list)
+registerButton.addEventListener('click', function () 
+{
+  let emailAddress = document.getElementById('registerEmail').value
+  let password = document.getElementById('registerPassword').value
   userName(emailAddress, password)
   firebase.auth().createUserWithEmailAndPassword(emailAddress, password)
   alert("Your account has been successfully created.")
 })
 
 // Add Users to Firebase
-function userName(emailAddress, password) {
+function userName(emailAddress, password) 
+{
   let usersRef = database.ref("Users")
-  let userRef = usersRef.push({
-    name: emailAddress,
-    password: password
-  })
-}
-
-// Sign-In
-loginButton.addEventListener('click', function () {
-  let emailAddress = document.getElementById('emailTextBox').value
-  let password = document.getElementById('passwordTextBox').value
-  firebase.auth().signInWithEmailAndPassword(emailAddress, password)
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      console.log(user)
-      registerHeader.style.display = 'none';
-      emailTextBox.style.display = 'none';
-      passwordTextBox.style.display = 'none';
-      registerButton.style.display = 'none';
-      loginButton.style.display = 'none';
-      signOutButton.style.display = 'block';
-      loggedUser.style.display = 'block'
-      loggedUser.innerHTML = `<h3>Account: ${emailTextBox.value}</h3>`
-    }
-    else {
-      // window.location = "login.html"
-      console.log("signed out")
-      registerHeader.style.display = 'block';
-      emailTextBox.style.display = 'block';
-      passwordTextBox.style.display = 'block';
-      registerButton.style.display = 'block';
-      loginButton.style.display = 'block';
-      loggedUser.style.display = 'none';
-    }
-  });
-  // checking()
-})
-
-// Sign-Out
-signOutButton.addEventListener('click', function () {
-  firebase.auth().signOut().then(function () {
-    location.reload().then(function () { }).catch(function (error) {
-    });
-  })
-})
-
-// Sign
-// firebase.auth().signOut().then(function() {
-//   // Sign-out successful.
-// }).catch(function(error) {
-//   // An error happened.
-// });
-
-function userName(emailAddress, password) {
-  let usersRef = database.ref("Users")
-  let userRef = usersRef.push({
+  usersRef.push
+  ({
     name: emailAddress,
     password: password
   })
@@ -84,3 +36,37 @@ function userName(emailAddress, password) {
   //   any: ''
   // }) Save for setting playlists
 }
+
+// Sign-In
+loginButton.addEventListener('click', function () 
+{
+  let emailAddress = document.getElementById('loginEmail').value
+  let password = document.getElementById('loginPassword').value
+  firebase.auth().signInWithEmailAndPassword(emailAddress, password)
+  firebase.auth().onAuthStateChanged(function (user) 
+  {
+    if (user) 
+    {
+      console.log(user)
+      window.location.replace("frontend.html")
+      
+      console.log('Hello bleow')
+    }
+    else 
+    {
+      console.log("signed out")
+    }
+  });
+})
+
+// Sign-Out
+signOutButton.addEventListener('click', function () 
+{
+  firebase.auth().signOut().then(function () 
+  {
+    location.reload().then(function () { }).catch(function (error) 
+    {
+    });
+  })
+})
+
