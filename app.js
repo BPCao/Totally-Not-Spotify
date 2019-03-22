@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQDfTAOqXc37WnDck0YTtR62RCWS1eFDqZiqOVr1N6ip3yF1fuD51XlM7pRXuxqfoeQPEX8LVJKxAmZsLSNSH2rjVoMEOx4LoFIbBEc07oAI-Fu9S7xEJj_0ZOOziTWgSxeY8U4X7T8FXgIpBTlclnqtAmmNQ5U"
+let userAccessToken = "BQBPqEH50OHniLSMEyG2uQkFQrcrkdx4Z-lZwpHOOPZbT6HrWKvk6RfwwV_HCgS-L3ca_9_xyRqYtaJKUp3aHMS96JeiNzy6D15YsiKztilrvCewf8fmTgBkqQ75uogmai1qxuA0-M2JxQBwj6gQPbXHn5GQeXY"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let playBase = database.ref("Playlist")
@@ -139,8 +139,8 @@ function getTrackFeatures(idString) {
 
             let featuresList = audio_features.map((feature) => {
                 return {
-                    danceability: feature.danceability,
                     valence: feature.valence,
+                    danceability: feature.danceability,
                     energy: feature.energy,
                     tempo: feature.tempo
                 }
@@ -176,18 +176,39 @@ function populateTrackFeatures(features) {
         }
         // ========== HAPPINESS GRAPHIC ENDS HERE ============
 
-        if (danceValue > 0.5) {
-            trackInfoList[i].danceability = "Yes"
+        //=============DANCEABILITY GRAPHIC CONTROL ===========
+        if (danceValue >= 0.75) {
+
+            trackInfoList[i].danceability = "images/100.png"
         }
-        else {
-            trackInfoList[i].danceability = "No"
+        else if (danceValue >= 0.5) {
+            trackInfoList[i].danceability = "images/75.png"
+
+        } else if (danceValue >= 0.25) {
+            trackInfoList[i].danceability = "images/50.png"
+
+        } else {
+            trackInfoList[i].danceability = "images/25.png"
         }
-        if (energyValue > 0.6) {
-            trackInfoList[i].energy = "high energy"
+        //============= DANCEABILITY GRAPHIC END ==============
+
+
+        //  ============ ENERGY GRAPHIC CONTROL ================
+        if (energyValue >= 0.75) {
+
+            trackInfoList[i].energy = "images/100.png"
         }
-        else {
-            trackInfoList[i].energy = "low energy"
+        else if (energyValue >= 0.5) {
+            trackInfoList[i].energy = "images/75.png"
+
+        } else if (energyValue >= 0.25) {
+            trackInfoList[i].energy = "images/50.png"
+
+        } else {
+            trackInfoList[i].denergy = "images/25.png"
         }
+
+        // ==============ENERGY GRAPHIC CONTROL END ============
         trackInfoList[i].tempo = tempoValue + " bpm"
     }
     return trackInfoList
@@ -197,25 +218,38 @@ function populateTrackFeatures(features) {
 
 function displayTrackInfo(selectedValue) {
 
+    let featuretoDisplay = ''
     let list = finalTrackInfoList.map((item) => {
-        let featuretoDisplay = ''
+        // let featuretoDisplay = ''
+        // let graphicDisplay = ``
+        // let numberDisplay = ``
+
+        //             <li class="trackLI">
+        //                 <div class="trackBox">
+        //                     <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+        //                     <p class="trackNumber">${item.track_number}-</p>
+        //                     <p id="${item.id}">${item.name}</p>
+        //                     <img class="featureValue" src="${featuretoDisplay}"></img>
+        //                 </div>
+        //             </li>
+        //             `
+        // let numberDisplay = `
+
+        //             <li class="trackLI">
+        //                 <div class="trackBox">
+        //                     <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+        //                     <p class="trackNumber">${item.track_number}-</p>
+        //                     <p id="${item.id}">${item.name}</p>
+        //                     <p class="featureValue">${featuretoDisplay}</p>
+        //                 </div>
+        //             </li>
+        // `
+
 
         if (selectedValue == "happiness") {
             featuretoDisplay = item.happiness
-        } else if (selectedValue == "danceability") {
-            featuretoDisplay = item.danceability
-        } else if (selectedValue == "energy") {
-            featuretoDisplay = item.energy
-        } else if (selectedValue == "tempo") {
-            featuretoDisplay = item.tempo
-        } else {
-            console.log("it did not work")
-        }
+            return `
 
-        // console.log(featuretoDisplay)
-
-        return `
-            
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
@@ -225,6 +259,85 @@ function displayTrackInfo(selectedValue) {
                         </div>
                     </li>
                     `
+        } else if (selectedValue == "danceability") {
+            featuretoDisplay = item.danceability
+            return `
+
+                    <li class="trackLI">
+                        <div class="trackBox">
+                            <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+                            <p class="trackNumber">${item.track_number}-</p>
+                            <p id="${item.id}">${item.name}</p>
+                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                        </div>
+                    </li>
+                    `
+        } else if (selectedValue == "energy") {
+            featuretoDisplay = item.energy
+            return `
+
+                    <li class="trackLI">
+                        <div class="trackBox">
+                            <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+                            <p class="trackNumber">${item.track_number}-</p>
+                            <p id="${item.id}">${item.name}</p>
+                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                        </div>
+                    </li>
+                    `
+        } else if (selectedValue == "tempo") {
+            featuretoDisplay = item.tempo
+            return `
+
+                    <li class="trackLI">
+                        <div class="trackBox">
+                            <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+                            <p class="trackNumber">${item.track_number}-</p>
+                            <p id="${item.id}">${item.name}</p>
+                            <p class="featureValue">${featuretoDisplay}</p>
+                        </div>
+                    </li>
+                    `
+
+        } else {
+            console.log("it did not work")
+        }
+        // graphicDisplay = `
+
+        //     < li class="trackLI" >
+        //         <div class="trackBox">
+        //             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+        //             <p class="trackNumber">${item.track_number}-</p>
+        //             <p id="${item.id}">${item.name}</p>
+        //             <img class="featureValue" src="${featuretoDisplay}"></img>
+        //         </div>
+        //             </li >
+        // `
+        // numberDisplay = `
+
+        // < li class="trackLI" >
+        //     <div class="trackBox">
+        //         <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+        //         <p class="trackNumber">${item.track_number}-</p>
+        //         <p id="${item.id}">${item.name}</p>
+        //         <p class="featureValue">${featuretoDisplay}</p>
+        //     </div>
+        //             </li >
+        // `
+
+        // console.log(featuretoDisplay)
+
+        // return `
+
+        //             <li class="trackLI">
+        //                 <div class="trackBox">
+        //                     <h3 onclick="addToPlaylist('${item.name}')">+</h3>
+        //                     <p class="trackNumber">${item.track_number}-</p>
+        //                     <p id="${item.id}">${item.name}</p>
+        //                     <img class="featureValue" src="${featuretoDisplay}"></img>
+        //                 </div>
+        //             </li>
+        //             `
     })
     tracksId.innerHTML = list.join('')
 }
