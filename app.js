@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQCWZVR4ycaIJiIulp2ULND8wYpK1Q-70tpSDZpsVnIX1IELwLKAPHoRwUZkYqELDb7eD45n__0fNCdTE6B94VEP-E3uvvMcd0jGtqvyuRoWdtAtCTjvrGJqN4g_Im74tnQlCRx4UjmrvOEGR7dA9J6UnHMJSeT0hWBJprEWLvWsdqpkAhV7"
+let userAccessToken = "BQBgB_HpGe7UhutSYj_DQ_0m_Z27WL6xYM8yuawni_00WTrckxpisaCokvKz4rmH6sF8ChVEqEKpqq1uwiaY3pHCslMuP2rH32-s6NZbyGwdRcuZj39LOKbv7kGPuDzxbWBR-y0877XwaG9mft51mvMvdqtJm46i80OPXENDsZtIyWSe1ERG"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -231,7 +231,7 @@ function displayTrackInfo(selectedValue) {
     tracksId.innerHTML = list.join('')
 }
 
- function addToPlaylist(name) {
+function addToPlaylist(name) {
     database.ref("Users").on("child_added", (user) => {
         if(user.val().name == firebase.auth().currentUser.email)
         {
