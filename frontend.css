@@ -22,7 +22,7 @@ img
     flex-direction: column;
     background-color: lightgreen;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     
 }
 
@@ -67,8 +67,8 @@ img
     text-align: center;
     font-size:40px;
     size:45px;
-    padding:10px;
-    margin:10px;
+    
+    
 }
   
 .trackLI 
@@ -181,6 +181,7 @@ input[type=text]:focus, input[type=password]:focus
 
 #signOutButton 
 {
+    
   display: none;
 }  
 /* My shit here */
@@ -196,4 +197,21 @@ input[type=text]:focus, input[type=password]:focus
     height:800px;
     margin: 150px 50px;
 
-} */
+} 
+
+.logoutButton {
+    border: none;
+    background: #404040;
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 20px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    display: inline-block;
+    margin:10px;
+   
+}
+
+body{
+    background-color: black;
+}
