@@ -107,6 +107,7 @@ img
 #tracksId 
 {
     list-style: none;
+    background-color: #242937
 }
 
 #tracksBox 
@@ -182,3 +183,17 @@ input[type=text]:focus, input[type=password]:focus
 {
   display: none;
 }  
+/* My shit here */
+.featureValue {
+    width: 5%;
+    height: 10%;
+}
+#bigAlbumImage {
+    position: absolute;
+    z-index: 2;
+    opacity: .1;
+    width: 800px;
+    height:800px;
+    margin: 150px 50px;
+
+}
