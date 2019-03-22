@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQAK8cmIwGeH3Diim0VLRQaHjuno8YJuhVuZ_LWdiH5mcTXaiLJCZKptAI2SXMfQUkeFj4gfCnEUAcZrIg54NYNGoiLSH5P8RiVTC-pfqUuRB40DZhSof9zqHjdL82vt964lCNvSXwH7aFzjSaUDi2Ag_MTAr9c"
+let userAccessToken = "BQBUnQWi94nWTT-xhTZcmQCwkpXKTOnD9HvTKvHezLLn4jRRxLPFC4JvAf9N49Zy2uaF5v2fXV82VJDW8So8spnw2tV4Zon4eOyZNutPxppAESamY9xn3d34WXGWEV7jaBG5VlmUMb4l1xTNINznw4JPTnLXOl0m82eGNIkgHZ35f_SWIw"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -321,5 +321,3 @@ featureSelect.addEventListener('change', () => {
     document.querySelector('select[name="feature"]').onchange = displayTrackInfo(event.target.value);
 
 }, false)
-
-
