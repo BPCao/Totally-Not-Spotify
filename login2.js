@@ -10,15 +10,9 @@ firebase.auth().onAuthStateChanged(function (user)
         database.ref("Users").on("child_added", (user) => {
             if(user.val().name == firebase.auth().currentUser.email)
             {
-                // let finalList = playlist.map(function (song) 
-                // {
-                //     return `<li>${song}</li>`
-                // })
-                // mikeBox.innerHTML = finalList.join('')
-
-                mikeBox.innerHTML = Object.values(user.val().playlist).map((song) => {
-                    return `<li>${song}</li>`
-                }).join('')
+                database.ref("Users/" + user.key + "/playlist").on("child_added", (song) => {
+                    mikeBox.innerHTML += `<li>${song.val()}<li>`
+                })
             }
         })
     }

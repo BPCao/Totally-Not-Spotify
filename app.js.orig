@@ -3,18 +3,16 @@ let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
 <<<<<<< HEAD
-let userAccessToken = "BQBPqEH50OHniLSMEyG2uQkFQrcrkdx4Z-lZwpHOOPZbT6HrWKvk6RfwwV_HCgS-L3ca_9_xyRqYtaJKUp3aHMS96JeiNzy6D15YsiKztilrvCewf8fmTgBkqQ75uogmai1qxuA0-M2JxQBwj6gQPbXHn5GQeXY"
+let userAccessToken = "BQBmYrPfVHWzQfP8QX3vzA-7zWG6tIWETRhy-1mCbLWQon_Im-83JvSMBN3gZryesPfcoCNlEET3CzyCYwS2U9T6ZJ_YsjiARU7RxY2nSWe48orQ71D9Kv9cxABjjMpVi4hU25T1WpiCbW3b0CtucwyJ9PIOvmo"
 =======
-let userAccessToken = "BQCwwV3KE-00k_WKCDuuMBIpH-dXeQe6nSLI-nd6HgDKAGR_q-O3Hsz88zpM6R2RRURdNa-bkHg6t_UAWATRRdKMvo6apsoezBD0-BbL-NUFY0h3C1LIal4YrQZz8NQLYEu4n1estn-jlYkQiNcx4a6M10nn_cY"
->>>>>>> master
+let userAccessToken = "BQD1Abn6fyfCskv1JF6udSj6mkx8ouNIfXuLFxOHnLIS8cWwa2atJm8mzWPSVUvdenXshkm47G_jBVQh6O0bBm1lF2a6ZFPFFwJ1r9bhsTtMeNoGwoewNqdZSSM9hBLVyBxdrF2puEdpzEI7kZHtV538ZgTGiBuwLXFs-Lmf5VJx86K-Aw"
+>>>>>>> sebsbranch
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
-let database = firebase.database()
-let playBase = database.ref("Playlist")
 let playlist = []
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []
-let usersRef = database.ref("Users")
+// let usersRef = database.ref("Users")
 let selectedValue = "happiness"
 let bigAlbumImage = document.getElementById('bigAlbumImage')
 currentAlbumID = ""
@@ -26,7 +24,6 @@ let albumCovers = []
 // let selectedValue = featureSelect.value
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
-    console.log("Hello")
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
         {
             method: "GET",
