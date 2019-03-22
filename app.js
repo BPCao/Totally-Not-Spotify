@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQAK8cmIwGeH3Diim0VLRQaHjuno8YJuhVuZ_LWdiH5mcTXaiLJCZKptAI2SXMfQUkeFj4gfCnEUAcZrIg54NYNGoiLSH5P8RiVTC-pfqUuRB40DZhSof9zqHjdL82vt964lCNvSXwH7aFzjSaUDi2Ag_MTAr9c"
+let userAccessToken = "BQDaQSXVoC8ItmkWKBEFb2Z25zXBG5Iu3kwlAr_9PJnV9l9mefjsqCQYciARkfC34FRcHXWppYW53zqfTn1K7uylK2uTfjlPkOUv2YGULqDtwPpy6i-JwuY5PG20s5u1OS_Tjq1a49s1XnIAmALsfxYh7WcwKUM"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -142,7 +142,7 @@ function populateTrackFeatures(features) {
         let liveValue = features[i].liveness
         // let acousticValue = features[i].acousticness
         // ==========TIME NUMBER ===============
-        trackInfoList[i].time = (Math.round(timeValue / 1000 / 60)) + ":" + Math.round((timeValue / 1000 % 60))
+        trackInfoList[i].time = (Math.floor(timeValue / 1000 / 60)) + ":" + Math.floor((timeValue / 1000 % 60))
         // ==========END TIME NUMBER ===============
 
         // ==========NEW HAPPINESS GRAPHIC ===============

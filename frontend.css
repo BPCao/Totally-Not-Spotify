@@ -96,14 +96,21 @@ img
 .trackBox 
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     border-bottom: 1px solid black;
+}
+.trackBox h3 {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #featureSelect 
 {
     float: right;
     margin: 5px 10px 0 0;
+}
+#featureSelectBox {
+    margin: 5px;
 }
 
 #tracksId 
@@ -221,4 +228,8 @@ body{
 h3 {
     color:white;
     font-size: 15px;
+}
+.featureValue {
+    margin-left: auto;
+    margin-right: 10px;
 }
