@@ -21,10 +21,23 @@
 </head>
 
 <body>
-    <header class="title" style="color: black;">Totally Not Spotify</header>
+
+    <!--This is start of column bootstrap div-->
+    <div class="row">
+            <div class="col-9">
+
+    <header class="title" style="color: whitesmoke;">Totally Not Spotify</header>
+    </div>
+
+
+
+<!--More Bootstrap-->
+    <div class="col-4">
+<!---->
+
     <div id="userID"></div>
     <br>
-    <button id="logoutButton">Sign Out</button>
+    <button class="logoutButton" id="logoutButton">Sign Out</button>
     <br>
     <br>
     <div class="searchBarContainer">
@@ -33,7 +46,19 @@
             <ul id="mikeBox">
             </ul>
         </div>
-        <!-- Search Bar -->
+    </div>
+
+<!--This is where first Bootstrap div ends -->
+</div>
+<!---->
+
+
+<!--Bootstrap Container-->
+<div class="col-6">
+
+<!-- Search Bar -->
+       
+       
         <div class="searchBarContainer">
             <div>
                 <input type=text id="searchBar" placeholder="Search by Artist"></input>
@@ -63,8 +88,10 @@
             <br>
             <br>
         </div>
-
+</div>
+</div>
 </body>
+
 
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
@@ -83,6 +110,7 @@
 </script>
 <script src="app.js"></script>
 <script src="login2.js"></script>
+<!-- <script src="login.js"></script> -->
 </body>
 
 </html>
