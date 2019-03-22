@@ -3,9 +3,9 @@ let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
 <<<<<<< HEAD
-let userAccessToken = "BQAK8cmIwGeH3Diim0VLRQaHjuno8YJuhVuZ_LWdiH5mcTXaiLJCZKptAI2SXMfQUkeFj4gfCnEUAcZrIg54NYNGoiLSH5P8RiVTC-pfqUuRB40DZhSof9zqHjdL82vt964lCNvSXwH7aFzjSaUDi2Ag_MTAr9c"
+let userAccessToken = "BQDaQSXVoC8ItmkWKBEFb2Z25zXBG5Iu3kwlAr_9PJnV9l9mefjsqCQYciARkfC34FRcHXWppYW53zqfTn1K7uylK2uTfjlPkOUv2YGULqDtwPpy6i-JwuY5PG20s5u1OS_Tjq1a49s1XnIAmALsfxYh7WcwKUM"
 =======
-let userAccessToken = "BQBKozLA79COXaIlro9EVGF3ypqFA5T8TIp3zRxVrZXOHqrZf9Vea4nxrxkRYOB1O8zQonyS_8b3tn1iow4Z9Ii-1IPfUrT0QxgUu6YDJafWfLaCVqM4HQyvSSZr0U2r29lwFR6HkY7AFwjuoOXjgJu3TLasH7Ar8ohqMSJDTRPajITDTg"
+let userAccessToken = "BQCJDJSV2jRRrzfqDhfj1fe_mNg04-h-Fq4bQUbNHxTu722bVJZBOOX0NTsccI1nAvVHJGj2F0GeVsTtFdN8HsuVIZEIXx78owiG34mNnzzdwL6Y5pP64OcJ28EDLc087Rvne-JwKvG-BKBWlN75QgfnNk_PCbc"
 >>>>>>> master
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
@@ -146,7 +146,7 @@ function populateTrackFeatures(features) {
         let liveValue = features[i].liveness
         // let acousticValue = features[i].acousticness
         // ==========TIME NUMBER ===============
-        trackInfoList[i].time = (Math.round(timeValue / 1000 / 60)) + ":" + Math.round((timeValue / 1000 % 60))
+        trackInfoList[i].time = (Math.floor(timeValue / 1000 / 60)) + ":" + Math.floor((timeValue / 1000 % 60))
         // ==========END TIME NUMBER ===============
 
         // ==========NEW HAPPINESS GRAPHIC ===============
@@ -325,5 +325,3 @@ featureSelect.addEventListener('change', () => {
     document.querySelector('select[name="feature"]').onchange = displayTrackInfo(event.target.value);
 
 }, false)
-
-

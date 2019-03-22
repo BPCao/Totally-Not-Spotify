@@ -88,17 +88,17 @@ img
     padding: 0 20px 0 10px;
 }
 
-.trackNumber 
+.trackNumber
 {
     float: left;
 }
 
-.featureValue 
+.featureValue
 {
     float: right;
 }
 
-.trackBox 
+.trackBox
 {
     display: flex;
     justify-content: left;
@@ -109,7 +109,7 @@ img
     margin-right: 10px;
 }
 
-#featureSelect 
+#featureSelect
 {
     float: right;
     margin: 5px 10px 0 0;
@@ -118,19 +118,19 @@ img
     margin: 5px;
 }
 
-#tracksId 
+#tracksId
 {
     list-style: none;
     background-color: #242937
 }
 
-#tracksBox 
+#tracksBox
 {
     display: flex;
     flex-direction: column;
 }
 
-#resultsUL 
+#resultsUL
 {
     display: flex;
     list-style: none;
@@ -139,7 +139,7 @@ img
     flex-wrap: wrap;
 }
 
-.content 
+.content
 {
     position: fixed;
     bottom: 0;
@@ -150,7 +150,7 @@ img
   }
 
   /* Add styles to the form container */
-.container 
+.container
 {
     display: grid;
     grid-auto-flow: row;
@@ -159,9 +159,9 @@ img
     padding: 50px;
     margin: 100px;
 }
-  
+
   /* Full-width input fields */
-input[type=text], input[type=password] 
+input[type=text], input[type=password]
 {
     width: 90%;
     padding: 15px;
@@ -169,15 +169,15 @@ input[type=text], input[type=password]
     border: none;
     background: #f1f1f1;
 }
-  
-input[type=text]:focus, input[type=password]:focus 
+
+input[type=text]:focus, input[type=password]:focus
 {
     background-color: #ddd;
     outline: royalblue;
 }
-  
+
   /* Set a style for the submit button */
-.btn 
+.btn
 {
     background-color: #4CAF50;
     color: white;
@@ -187,17 +187,17 @@ input[type=text]:focus, input[type=password]:focus
     width: 100%;
     opacity: 0.9;
 }
-  
-.btn:hover 
+
+.btn:hover
 {
     opacity: 1;
 }
 
 #signOutButton
 {
-    
+
   display: none;
-}  
+}
 /* My shit here */
 .featureValue {
     width: 5%;
@@ -211,7 +211,7 @@ input[type=text]:focus, input[type=password]:focus
     height:800px;
     margin: 150px 50px;
 
-} 
+}
 
 .logoutButton {
     border: none;
@@ -223,7 +223,7 @@ input[type=text]:focus, input[type=password]:focus
     border-radius: 6px;
     display: inline-block;
     margin:10px;
-   
+
 }
 
 body{
@@ -234,7 +234,10 @@ h3 {
     color:white;
     font-size: 15px;
 }
+<<<<<<< HEAD
 .featureValue {
     margin-left: auto;
     margin-right: 10px;
 }
+=======
+>>>>>>> master

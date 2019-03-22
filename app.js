@@ -321,5 +321,3 @@ featureSelect.addEventListener('change', () => {
     document.querySelector('select[name="feature"]').onchange = displayTrackInfo(event.target.value);
 
 }, false)
-
-
