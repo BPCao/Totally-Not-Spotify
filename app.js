@@ -2,14 +2,13 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBPqEH50OHniLSMEyG2uQkFQrcrkdx4Z-lZwpHOOPZbT6HrWKvk6RfwwV_HCgS-L3ca_9_xyRqYtaJKUp3aHMS96JeiNzy6D15YsiKztilrvCewf8fmTgBkqQ75uogmai1qxuA0-M2JxQBwj6gQPbXHn5GQeXY"
+let userAccessToken = "BQBmYrPfVHWzQfP8QX3vzA-7zWG6tIWETRhy-1mCbLWQon_Im-83JvSMBN3gZryesPfcoCNlEET3CzyCYwS2U9T6ZJ_YsjiARU7RxY2nSWe48orQ71D9Kv9cxABjjMpVi4hU25T1WpiCbW3b0CtucwyJ9PIOvmo"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
-let playBase = database.ref("Playlist")
 let playlist = []
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []
-let usersRef = database.ref("Users")
+// let usersRef = database.ref("Users")
 let selectedValue = "happiness"
 let bigAlbumImage = document.getElementById('bigAlbumImage')
 currentAlbumID = ""
@@ -343,9 +342,12 @@ function displayTrackInfo(selectedValue) {
 }
 
 function addToPlaylist(name) {
-    console.log("Hello")
-    playlist.push(name)
-    console.log(musicStorage)
+    database.ref("Users").on("child_added", (user) => {
+        if (user.val().name == firebase.auth().currentUser.email) {
+            database.ref("Users/" + user.key + "/playlist").push(name)
+            playlist.push(name)
+        }
+    })
 }
 
 featureSelect.addEventListener('change', () => {
