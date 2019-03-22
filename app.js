@@ -5,6 +5,7 @@ let resultsUL = document.getElementById('resultsUL')
 let userAccessToken = "BQAK8cmIwGeH3Diim0VLRQaHjuno8YJuhVuZ_LWdiH5mcTXaiLJCZKptAI2SXMfQUkeFj4gfCnEUAcZrIg54NYNGoiLSH5P8RiVTC-pfqUuRB40DZhSof9zqHjdL82vt964lCNvSXwH7aFzjSaUDi2Ag_MTAr9c"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
+let database = firebase.database()
 let playlist = []
 let tracksId = document.getElementById('tracksId')
 let trackInfoList = []

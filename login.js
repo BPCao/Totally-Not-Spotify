@@ -1,5 +1,5 @@
 // Initial Settings
-let database = firebase.database()
+// let database = firebase.database()
 let registerHeader = document.getElementById("registerHeader")
 let userbar = document.getElementById("userbar")
 let loginEmail = document.getElementById("loginEmail")
