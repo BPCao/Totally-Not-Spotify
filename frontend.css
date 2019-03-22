@@ -1,4 +1,4 @@
-* 
+ *
 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
 }
@@ -13,14 +13,14 @@ img
 
 .elementBox 
 {
-    background-color: #f1bc7f;
+    background-color: lightgreen;
 }
 
 .searchBarContainer 
 {
     display: flex;
     flex-direction: column;
-    background-color: antiquewhite;
+    background-color: lightgreen;
     justify-content: center;
     padding: 20px;
     
@@ -28,7 +28,7 @@ img
 
 .searchBarContainer > div 
 {
-    background-color: bisque;
+    background-color:greenyellow;
     margin: 10px;
     text-align: center;
     line-height: 75px;
@@ -196,4 +196,4 @@ input[type=text]:focus, input[type=password]:focus
     height:800px;
     margin: 150px 50px;
 
-}
+} */
