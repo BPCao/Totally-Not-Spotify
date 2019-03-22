@@ -12,7 +12,7 @@ let playlist = []
 let finalTrackInfoList = []
 let trackInfoList = []
 let featureToDisplayList
-let userAccessToken = "BQCuK3A2BjaTNuR1WavWDYxAVBUL35zN_jBrEqxTOeyoaWuNWLZlNgCwgMOdgMNBoThI9OfnsUnwuOLARi2F3DHfTExvxA8XwBUFnxIX3qUFxnGK3eiDh5mB5dVUEI80dS9M9-XcN47JeFvEIWz-pWb3P6bwD8Y"
+let userAccessToken = "BQDEgnnecW0toDAiFkCJjEyzWTBUF2ChBQ-eVGjT8ipYjxG1uM9U2dC_QBfq1TUfI5oDXH7D5Npu92DHm9MnCpXbKdjrheToHrPPsqpKccC9Nh6-bYxekSq7QVxZexqd48jic-prabyd3toxvms9au8YqDx5TUG6rc5w-cT0t0BD8fUNbQ"
 
 // Searches albums by artist
 searchButton.addEventListener('click', function () {

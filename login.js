@@ -1,5 +1,5 @@
 // Initial Settings
-let database = firebase.database()
+// let database = firebase.database()
 let registerHeader = document.getElementById("registerHeader")
 let userbar = document.getElementById("userbar")
 let loginEmail = document.getElementById("loginEmail")
@@ -10,7 +10,7 @@ let registerButton = document.getElementById("registerButton")
 let loggedUser = document.getElementById("loggedUser")
 let loginButton = document.getElementById("loginButton")
 let userID = document.getElementById("userID")
-let signOutButton = document.getElementById("signOutButton")
+let logoutButton = document.getElementById("logoutButton")
 
 
 // Create User (Database has user but not authenticated in list)
@@ -30,7 +30,8 @@ function userName(emailAddress, password)
   usersRef.push
   ({
     name: emailAddress,
-    password: password
+    password: password,
+    playlist: null
   })
   // userRef.child("stores").set({
   //   any: ''
@@ -49,8 +50,6 @@ loginButton.addEventListener('click', function ()
     {
       console.log(user)
       window.location.replace("frontend.html")
-      
-      console.log('Hello bleow')
     }
     else 
     {
@@ -59,14 +58,5 @@ loginButton.addEventListener('click', function ()
   });
 })
 
-// Sign-Out
-signOutButton.addEventListener('click', function () 
-{
-  firebase.auth().signOut().then(function () 
-  {
-    location.reload().then(function () { }).catch(function (error) 
-    {
-    });
-  })
-})
+
 
