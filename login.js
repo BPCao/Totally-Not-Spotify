@@ -31,7 +31,7 @@ function userName(emailAddress, password)
   ({
     name: emailAddress,
     password: password,
-    playlist: ""
+    playlist: null
   })
   // userRef.child("stores").set({
   //   any: ''

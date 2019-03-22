@@ -2,9 +2,10 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQDfTAOqXc37WnDck0YTtR62RCWS1eFDqZiqOVr1N6ip3yF1fuD51XlM7pRXuxqfoeQPEX8LVJKxAmZsLSNSH2rjVoMEOx4LoFIbBEc07oAI-Fu9S7xEJj_0ZOOziTWgSxeY8U4X7T8FXgIpBTlclnqtAmmNQ5U"
+let userAccessToken = "BQCWZVR4ycaIJiIulp2ULND8wYpK1Q-70tpSDZpsVnIX1IELwLKAPHoRwUZkYqELDb7eD45n__0fNCdTE6B94VEP-E3uvvMcd0jGtqvyuRoWdtAtCTjvrGJqN4g_Im74tnQlCRx4UjmrvOEGR7dA9J6UnHMJSeT0hWBJprEWLvWsdqpkAhV7"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
+let database = firebase.database()
 let playBase = database.ref("Playlist")
 let playlist = []
 let tracksId = document.getElementById('tracksId')
@@ -21,6 +22,7 @@ let albumCovers = []
 // let selectedValue = featureSelect.value
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
+    console.log("Hello")
     fetch("https://api.spotify.com/v1/search?q=" + searchBar.value + "&type=track%2Cartist&market=US&limit=10&offset=5",
         {
             method: "GET",
@@ -229,10 +231,14 @@ function displayTrackInfo(selectedValue) {
     tracksId.innerHTML = list.join('')
 }
 
-function addToPlaylist(name) {
-    console.log("Hello")
-    playlist.push(name)
-    console.log(musicStorage)
+ function addToPlaylist(name) {
+    database.ref("Users").on("child_added", (user) => {
+        if(user.val().name == firebase.auth().currentUser.email)
+        {
+            database.ref("Users/" + user.key + "/playlist").push(name)
+            playlist.push(name)
+        }
+    })
 }
 
 featureSelect.addEventListener('change', () => {
