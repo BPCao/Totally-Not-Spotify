@@ -86,6 +86,7 @@ img
 .trackLI p
 {
     padding: 0 20px 0 10px;
+    color: #b1b1b1;
 }
 
 .trackNumber 
@@ -104,10 +105,15 @@ img
     justify-content: left;
     border-bottom: 1px solid black;
     padding: 20px;
+    color: whitesmoke;
+    align-items: baseline;
 }
 .trackBox h3 {
     margin-left: 10px;
     margin-right: 10px;
+}
+.trackBox h3:hover {
+    cursor: pointer;
 }
 
 #featureSelect 
@@ -216,7 +222,7 @@ input[type=text]:focus, input[type=password]:focus
     height: auto;
     left: 45%;
     margin-left: -25%;
-    top: 10%;
+    top: 125px;
     margin-top: -5%;
 
 } 
@@ -247,8 +253,8 @@ h3 {
     margin-right: 10px;
 }
 .imgFeatureValue {
-    width: 5%;
-    height: 10%;
+    width: 40px;
+    height: 50px;
     margin-left: auto;
     margin-top: auto;
     margin-right: 10px;

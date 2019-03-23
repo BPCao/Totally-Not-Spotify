@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQBCFm7rE7VmhHV-CkAruzyaQPHGF8f4-Gb7xHh9j64KLwKeNQ2HAdnhsppjNqrjch0ek1jgU6_zLj6PZ4GwOhVDlBzFqzSaXdFJGBF7zIz9zPWvntYkF9cOpEsVdUdn5VAwJ4Gy0GbHVAc4LFaZiAQUXIpXJ8U"
+let userAccessToken = "BQDk2RKNdrT4RsAK6dLmVMHxVENLHg080zMuJUy3CSRwWetFQ-K6aDPu0PMqiNJ5OL2VVpqjQV4nGu3FiGw3RHKqSHHAMO8az_wtDbRFMo1O4ZhEkCmCz4msl9IJV2QH0SE9qPMAliBFWudVACQqm64mSPC9W1A"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -248,7 +248,7 @@ function displayTrackInfo(selectedValue) {
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
                             <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
-                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                            <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
                     </li>
                     `
@@ -261,7 +261,7 @@ function displayTrackInfo(selectedValue) {
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
                             <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
-                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                            <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
                     </li>
                     `
@@ -301,7 +301,7 @@ function displayTrackInfo(selectedValue) {
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
                             <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
-                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                            <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
                     </li>
                     `
