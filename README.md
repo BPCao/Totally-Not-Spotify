@@ -7,7 +7,7 @@ FEATURES
 
 Users may search by artist for related album music (with its respective album art). Images can further be clicked on to return songs.
 
-<a href="https://gfycat.com/acclaimedbrokenindianrhinoceros"><img src="https://gfycat.com/acclaimedbrokenindianrhinoceros" /></a>
+![Uploading Login.2019-03-23 13_29_25.gif…]()
 
 USAGE
 
