@@ -103,6 +103,7 @@ img
     display: flex;
     justify-content: left;
     border-bottom: 1px solid black;
+    padding: 20px;
 }
 .trackBox h3 {
     margin-left: 10px;
@@ -123,9 +124,13 @@ img
     list-style: none;
     background-color: #242937
 }
+#tracksEtc {
+    position: relative;
+}
 
 #tracksBox 
 {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -206,10 +211,13 @@ input[type=text]:focus, input[type=password]:focus
 #bigAlbumImage {
     position: absolute;
     z-index: 2;
-    opacity: .1;
-    width: 800px;
-    height:800px;
-    margin: 150px 50px;
+    opacity: .2;
+    width: 25em;
+    height: auto;
+    left: 45%;
+    margin-left: -25%;
+    top: 10%;
+    margin-top: -5%;
 
 } 
 
@@ -237,4 +245,12 @@ h3 {
 .featureValue {
     margin-left: auto;
     margin-right: 10px;
+}
+.imgFeatureValue {
+    width: 5%;
+    height: 10%;
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: 10px;
+
 }

@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQDaQSXVoC8ItmkWKBEFb2Z25zXBG5Iu3kwlAr_9PJnV9l9mefjsqCQYciARkfC34FRcHXWppYW53zqfTn1K7uylK2uTfjlPkOUv2YGULqDtwPpy6i-JwuY5PG20s5u1OS_Tjq1a49s1XnIAmALsfxYh7WcwKUM"
+let userAccessToken = "BQBCFm7rE7VmhHV-CkAruzyaQPHGF8f4-Gb7xHh9j64KLwKeNQ2HAdnhsppjNqrjch0ek1jgU6_zLj6PZ4GwOhVDlBzFqzSaXdFJGBF7zIz9zPWvntYkF9cOpEsVdUdn5VAwJ4Gy0GbHVAc4LFaZiAQUXIpXJ8U"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -142,7 +142,11 @@ function populateTrackFeatures(features) {
         let liveValue = features[i].liveness
         // let acousticValue = features[i].acousticness
         // ==========TIME NUMBER ===============
-        trackInfoList[i].time = (Math.floor(timeValue / 1000 / 60)) + ":" + Math.floor((timeValue / 1000 % 60))
+        // trackInfoList[i].time = (Math.floor(timeValue / 1000 / 60)) + ":" + Math.floor((timeValue / 1000 % 60))
+        let minutes = Math.floor(timeValue / 60000);
+        let seconds = ((timeValue % 60000) / 1000).toFixed(0);
+        trackInfoList[i].time = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+
         // ==========END TIME NUMBER ===============
 
         // ==========NEW HAPPINESS GRAPHIC ===============
@@ -231,7 +235,7 @@ function displayTrackInfo(selectedValue) {
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
                             <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
-                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                            <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
                     </li>
                     `
