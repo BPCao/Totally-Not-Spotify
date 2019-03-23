@@ -7,7 +7,7 @@ FEATURES
 
 Users may search by artist for related album music (with its respective album art). Images can further be clicked on to return songs.
 
-<a href="https://imgflip.com/gif/2wrt97"><img src="https://i.imgflip.com/2wrt97.gif" title="made at imgflip.com"/></a>
+<a href="https://gfycat.com/acclaimedbrokenindianrhinoceros"><img src="https://gfycat.com/acclaimedbrokenindianrhinoceros" /></a>
 
 USAGE
 
