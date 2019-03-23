@@ -142,7 +142,11 @@ function populateTrackFeatures(features) {
         let liveValue = features[i].liveness
         // let acousticValue = features[i].acousticness
         // ==========TIME NUMBER ===============
-        trackInfoList[i].time = (Math.floor(timeValue / 1000 / 60)) + ":" + Math.floor((timeValue / 1000 % 60))
+        // trackInfoList[i].time = (Math.floor(timeValue / 1000 / 60)) + ":" + Math.floor((timeValue / 1000 % 60))
+        let minutes = Math.floor(timeValue / 60000);
+        let seconds = ((timeValue % 60000) / 1000).toFixed(0);
+        trackInfoList[i].time = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+
         // ==========END TIME NUMBER ===============
 
         // ==========NEW HAPPINESS GRAPHIC ===============
@@ -231,7 +235,7 @@ function displayTrackInfo(selectedValue) {
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
                             <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
-                            <img class="featureValue" src="${featuretoDisplay}"></img>
+                            <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
                     </li>
                     `
