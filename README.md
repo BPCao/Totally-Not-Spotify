@@ -22,6 +22,7 @@ Adding Songs to a Playlist
 
 Deleting Songs from a Playlist
 
+![Delete_Songs](https://user-images.githubusercontent.com/47377631/54870761-c5b68c00-4d78-11e9-83a7-bcb9081e733c.gif)
 
 
 USAGE
