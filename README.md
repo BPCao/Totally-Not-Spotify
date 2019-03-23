@@ -7,6 +7,7 @@ FEATURES
 
 Users may search by artist for related album music (with its respective album art). Images can further be clicked on to return songs.
 
+https://imgflip.com/gif/2wrt97
 
 USAGE
 
