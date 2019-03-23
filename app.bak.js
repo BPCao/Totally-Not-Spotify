@@ -12,7 +12,7 @@ let playlist = []
 let finalTrackInfoList = []
 let trackInfoList = []
 let featureToDisplayList
-let userAccessToken = "BQDEgnnecW0toDAiFkCJjEyzWTBUF2ChBQ-eVGjT8ipYjxG1uM9U2dC_QBfq1TUfI5oDXH7D5Npu92DHm9MnCpXbKdjrheToHrPPsqpKccC9Nh6-bYxekSq7QVxZexqd48jic-prabyd3toxvms9au8YqDx5TUG6rc5w-cT0t0BD8fUNbQ"
+let userAccessToken = "BQBUnQWi94nWTT-xhTZcmQCwkpXKTOnD9HvTKvHezLLn4jRRxLPFC4JvAf9N49Zy2uaF5v2fXV82VJDW8So8spnw2tV4Zon4eOyZNutPxppAESamY9xn3d34WXGWEV7jaBG5VlmUMb4l1xTNINznw4JPTnLXOl0m82eGNIkgHZ35f_SWIw&token_type=Bearer&expires_in=3600"
 
 // Searches albums by artist
 searchButton.addEventListener('click', function () {
@@ -177,4 +177,3 @@ function addToPlaylist(name) {
     playlistBase.push(name)
     console.log(playlist)
 }
-
