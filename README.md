@@ -7,7 +7,13 @@ FEATURES
 
 Users may search by artist for related album music (with its respective album art). Images can further be clicked on to return songs.
 
+
+Logging In
 ![Login 2019-03-23 13_29_25](https://user-images.githubusercontent.com/47377631/54870262-41610a80-4d72-11e9-8932-5f3b679ecded.gif)
+
+
+Adding Songs to a Playlist
+
 
 USAGE
 
