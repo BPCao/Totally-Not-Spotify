@@ -1,6 +1,6 @@
-// let userID = document.getElementById("userID")
+let userID = document.getElementById("userID")
 // let database = firebase.database()
-// let logoutButton = document.getElementById("logoutButton")
+let logoutButton = document.getElementById("logoutButton")
 let userKey = null
 firebase.auth().onAuthStateChanged(function (user) 
 {
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function (user)
                     let songsHTML = ''
                     if(songs.val() != null){
                         songsHTML = Object.entries(songs.val()).map((cancion) => {
-                            return `<li onclick="removeSong('${cancion[0]}')">${cancion[1]}</li>`
+                            return `<li onclick="removeSong('${cancion[0]}')" style="color: white">${cancion[1]}</li>`
                         }).join('')
                     }
                     mikeBox.innerHTML = songsHTML
