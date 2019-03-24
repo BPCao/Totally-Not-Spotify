@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQDk2RKNdrT4RsAK6dLmVMHxVENLHg080zMuJUy3CSRwWetFQ-K6aDPu0PMqiNJ5OL2VVpqjQV4nGu3FiGw3RHKqSHHAMO8az_wtDbRFMo1O4ZhEkCmCz4msl9IJV2QH0SE9qPMAliBFWudVACQqm64mSPC9W1A"
+let userAccessToken = "BQDlgUD2EK8AWLvS87EkO4jyLVONi5IMfWs0hfnsf_XbxsTJNPBI7VX5ACIJOn1CuBLN-cFPBJnXPJXUwl3UDml5Ssr83SN1uEff15hFwA7RysULsfCkmtoWutdOJzTtfUXW0xIzY2tfi6n-L2FoCyz6qDtsF7Q"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -233,7 +233,6 @@ function displayTrackInfo(selectedValue) {
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
@@ -246,7 +245,6 @@ function displayTrackInfo(selectedValue) {
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
@@ -259,7 +257,6 @@ function displayTrackInfo(selectedValue) {
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
@@ -272,7 +269,6 @@ function displayTrackInfo(selectedValue) {
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <p class="featureValue">${featuretoDisplay}</p>
                         </div>
@@ -286,7 +282,6 @@ function displayTrackInfo(selectedValue) {
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <p class="featureValue">${featuretoDisplay}</p>
                         </div>
@@ -299,7 +294,6 @@ function displayTrackInfo(selectedValue) {
                     <li class="trackLI">
                         <div class="trackBox">
                             <h3 onclick="addToPlaylist('${item.name}')">+</h3>
-                            <p class="trackNumber">${item.track_number}-</p>
                             <p id="${item.id}">${item.name}</p>
                             <img class="imgFeatureValue" src="${featuretoDisplay}"></img>
                         </div>
