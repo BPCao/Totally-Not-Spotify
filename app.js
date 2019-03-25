@@ -2,7 +2,7 @@ let searchBar = document.getElementById('searchBar')
 let searchButton = document.getElementById('searchButton')
 let resultsBox = document.getElementById('resultsBox')
 let resultsUL = document.getElementById('resultsUL')
-let userAccessToken = "BQC5or1Io1GHY0E_IbOtSEnTj2jBNNBIq3DS-YZ7cFTmbKLEfw5OC4F3qCPVa63_mul635_4tpXaWCtn2G0XJEuw-mfRPbAiybutVXUhfUDhPhbb606ivG1eVzu3VHNDwIB4i9s1zdEG4IJncAFHvJl9-znVD0k"
+let userAccessToken = "BQAtxXOofbzlVrqq_Y7y3KLR8B6ZhOmOX3I07E1sBOeXJBaaMsQSOItYmne3KkqUN8N02eIwruaS-8zaT-p9ct-OjanJD8Wjz5UJB7sTELL6GtsWy-DpYA3q0pVwdC73HG4hsj8XgLmRkyBrV3WewZveElwABZU"
 let happinessUL = document.getElementById('happinessUL')
 let featureSelect = document.getElementById('featureSelect')
 let database = firebase.database()
@@ -56,6 +56,7 @@ let finalTrackInfoList = []
 let featureToDisplayList
 async function getTracks(id) {
     // ===============NEW FUNCTION FOR ALBUM COVER===============
+    featureSelect.style.visibility = "visible"
     currentAlbumID = id
     albumCovers.forEach((album) => {
         if (currentAlbumID == album.id) {
@@ -64,7 +65,7 @@ async function getTracks(id) {
         }
     })
     // ==============ALBUM COVER FUNCTION ENDS HERE ===================
-    console.log(albumCovers)
+    // console.log(albumCovers)
 
 
     let response = await fetch("https://api.spotify.com/v1/albums/" + id + "/tracks",
